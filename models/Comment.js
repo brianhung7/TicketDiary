@@ -5,7 +5,9 @@ const ComentSchema = new mongoose.Schema(
     {
 
         content: {
+
             type: String,
+            required: [true, 'Please add content to your comment'],
 
         },
         post: {
