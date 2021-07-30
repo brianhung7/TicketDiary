@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 4000;
 
 /* SECTION App Config */
 
-// app.set("view engine", "ejs");
+app.set("view engine", "ejs");
 
 // session controller
 // app.use(
@@ -82,14 +82,14 @@ const PORT = process.env.PORT || 4000;
 // app.use("/products", controllers.product);
 // app.use("/reviews", authRequired, controllers.review);
 
-// // 404
-// app.get("/*", (req, res) => {
-//   const context = {
-//     error: req.error,
-//   };
+// 404
+app.get("/*", (req, res) => {
+    const context = {
+        error: req.error,
+    };
 
-//   res.render("404", context);
-// });
+    res.render("404", context);
+});
 
 app.listen(PORT, () =>
     console.log(`Listening for client requests on port ${PORT}`)
