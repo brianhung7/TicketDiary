@@ -13,8 +13,10 @@ const app = express();
 /* SECTION PORT  */
 const PORT = process.env.PORT || 4000;
 
+
 /* SECTION Internal Modules */
-// const controllers = require("./controllers");
+//const controllers = require("./controllers");
+const postCtrl = require("./controllers/postcontrollers.js");
 
 /* SECTION App Config */
 
@@ -79,7 +81,7 @@ app.set("view engine", "ejs");
 
 // /* SECTION Routes */
 // app.use("/", controllers.auth);
-// app.use("/products", controllers.product);
+ app.use("/gallery", postCtrl);
 // app.use("/reviews", authRequired, controllers.review);
 
 // 404

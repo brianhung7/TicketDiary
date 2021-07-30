@@ -1,3 +1,4 @@
+require("../config/db.connection");
 const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema(
@@ -6,10 +7,10 @@ const postSchema = new mongoose.Schema(
             type: String,
             required: [true, "Please Provide a Title."],
         },
-        user: {
-            type: mongoose.Types.ObjectId,
-            ref: "User",
-        },
+        // user: {
+        //     type: mongoose.Types.ObjectId,
+        //     ref: "User",
+        // },
         image: {
             type: String,
             require: true,
