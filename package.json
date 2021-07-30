@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.13.5",
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "ticketdiary",
+  "description": "A website where users can share films they recently watched and share their thoughts, opinions, and feelings through posts. The website invites people to experience what everyone is watching. It’s a community of film enthusiasts that celebrate film as an artform.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianhung7/TicketDiary.git"
+  },
+  "author": "Arnav and Brian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brianhung7/TicketDiary/issues"
+  },
+  "homepage": "https://github.com/brianhung7/TicketDiary#readme"
+}
