@@ -4,24 +4,24 @@ const User = require("../models/User");
 User.insertMany(
     [
         {
-            username: 'panda',
-            email: 'arnav@gmail',
+            username: 'panda1',
+            email: 'arnav1@gmail',
             password: 'sdf',
             avatar: 'lajsf',
             biography: 'asd',
 
         },
         {
-            username: 'panda',
-            email: 'arnav@gmail',
+            username: 'panda2',
+            email: 'arnav2@gmail',
             password: 'sdf',
             avatar: 'lajsf',
             biography: 'asd',
 
         },
         {
-            username: 'panda',
-            email: 'arnav@gmail',
+            username: 'panda3',
+            email: 'arnav3@gmail',
             password: 'sdf',
             avatar: 'lajsf',
             biography: 'asd',
