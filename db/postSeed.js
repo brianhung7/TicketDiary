@@ -1,4 +1,5 @@
-const { Post } = require("../models/Post");
+const  Post  = require("../models/Post");
+
 
 Post.insertMany(
     [
@@ -6,12 +7,22 @@ Post.insertMany(
             title: "Howdy",
             image: "https://i.imgur.com/L68FtMA.jpeg",
             description: "Good movie",
-        }
+        },
+        {
+            title: "Howdy",
+            image: "https://i.imgur.com/L68FtMA.jpeg",
+            description: "Good movie",
+        },  
+        {
+            title: "Howdy",
+            image: "https://i.imgur.com/L68FtMA.jpeg",
+            description: "Good movie",
+        },
     ],
     function(error, createdPosts){
         if (error) return console.log(error);
         console.log("SEED COMPLETE");
-        console.log("createdPosts");
+        console.log(createdPosts);
     
     }
 )
