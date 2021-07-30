@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main class="container is-max-widescreen">
+        <div class="columns is-multiline p-5">
+          <% for(let idx = 0; idx < posts.length; idx++){ %> <% const post =
+          posts[idx] %>
+          <div class="column is-one-third">
+            <article class="card">
+              <section class="card-image">
+                <figure class="image is-3by3">
+                  <img src="<%= post.image %>" alt="Placeholder image" />
+                </figure>
+              </section>
+              <div class="card-content">
+                <div class="content">
+                  <h3>
+                    <a href="/products/<%= post.id %>"><%= post.title %> </a>
+                  </h3>
+                  <p><%= post.description %>$</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <% } %>
+        </div>
+      </main>
+</body>
+</html>

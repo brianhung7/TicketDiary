@@ -7,7 +7,7 @@ router.get("/",  (req, res, next) => {
         const context = {
             posts:allPosts,
         }
-        res.send(context);
+        res.render("posts/gallery",context);
     })
 })
 
