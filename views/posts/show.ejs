@@ -6,7 +6,7 @@
     <body>
         <%- include('../partials/_navbar') %>
             <img class="poster_show" width=450px src="<%= post.image %>" alt="Placeholder image" />
-           <div>Username: <%= post.user.username %> </div>
+           <div> <a href = "/users/<%= post.user.id %>"> Username: <%= post.user.username %> </a> </div>
            <div>Post Title: <%= post.title %></div>
            <div>Description: <%= post.description %></div>
                     <div class="comment_form">
