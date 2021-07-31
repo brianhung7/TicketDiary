@@ -15,6 +15,9 @@
             <div class="buttons">
                 <a class="button" href="/gallery/<%= post.id %>/edit">Edit Post</a>
             </div>
+            <form action="/gallery/<%= post.id %>?_method=DELETE" method="POST">
+                <input class="button" type="submit" value="Delete Post" />
+            </form>
 </body>
 
 </html>
