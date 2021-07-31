@@ -49,7 +49,7 @@ app.set("view engine", "ejs");
 // });
 
 // // create a location for our nav links
-// app.use(require("./utils/navlinks"));
+app.use(require("./utils/navlinks"));
 
 app.use(express.static("public"));
 

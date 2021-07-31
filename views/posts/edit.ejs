@@ -2,6 +2,7 @@
 <html lang="en">
     <%- include('../partials/_head') %> 
 <body>
+    <%- include('../partials/_navbar') %> 
     <form action="/gallery/<%= post.id %>?_method=PUT" method="POST">
         <% if (typeof error !=='undefined' ) { %>
             <article class="message is-danger">

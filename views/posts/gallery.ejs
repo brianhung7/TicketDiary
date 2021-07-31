@@ -2,6 +2,7 @@
 <html lang="en">
 <%- include('../partials/_head') %> 
 <body>
+  <%- include('../partials/_navbar',{routes}) %> 
     <main class="container__gallery">
         <div class="columns">
           <% for(let idx = 0; idx < posts.length; idx++){ %> <% const post =
