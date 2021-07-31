@@ -1,53 +1,53 @@
 const express = require("express");
 const router = express.Router();
 
-const { Comment, Post } = require("../models");
+const Post = require("../models/Post");
+const Comment = require("../models/Comment");
 
 // == Base route "/reviews"
 
 // index route
 // "/" - GET - Presentational
-router.get("/", (req, res) => {
-    Review.find({}).populate('post user').exec((error, allComments) => {
-        if (error) {
-            console.log(error);
-            req.error = error;
-            return next();
-        }
+// router.get("/", (req, res) => {
+//     Review.find({}).populate('post user').exec((error, allComments) => {
+//         if (error) {
+//             console.log(error);
+//             req.error = error;
+//             return next();
+//         }
 
-        Post.find({}, (error, allPosts) => {
+//         Post.find({}, (error, allPosts) => {
 
-            if (error) {
-                console.log(error);
-                req.error = error;
-                return next();
-            }
+//             if (error) {
+//                 console.log(error);
+//                 req.error = error;
+//                 return next();
+//             }
 
-            const context = {
-                comments: allComments,
-                posts: allProducts
-            };
+//             const context = {
+//                 comments: allComments,
+//                 posts: allProducts
+//             };
 
-            return res.render("comments/index", context);
-        })
-    });
-});
+//             return res.render("comments/index", context);
+//         })
+//     });
+// });
 
 
 // create 
 // "/" - POST - functional
 
 router.post("/", (req, res) => {
-    req.body.user = req.session.currentUser.id;
-
-    Review.create(req.body, (error, createdReview) => {
+    //req.body.user = req.session.currentUser.id;
+    req.body.user = "610486878cda7b49430d20c2";
+    Comment.create(req.body, (error, createdComment) => {
         if (error) {
             console.log(error);
             req.error = error;
             return next();
         }
-
-        return res.redirect("/gallery");
+        return res.redirect(`/gallery/${req.body.post}`);
     });
 });
 
