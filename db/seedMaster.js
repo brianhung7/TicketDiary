@@ -108,17 +108,17 @@ seedPosts();
 
 
 
-
-
 commentArr = ["It's lovely to hear your thoughts on this movie!", "Hey what movie are you going to watch next?", "Hey let's catch a movie sometime!", "Nice review, great work", "Amazing job sharing this with us!", "I'm so excited to hear your thoughts!", "Can't wait to see what else happens in the series"];
 const seedComments = async () => {
     try {
+        let idAllPosts = await Post.find({}, { _id: 1 });
+        let postIdArr = idAllPosts.map(a => a._id);
         for (let i = 0; i < posterArr.length; i++) {
-            Comment.insertMany(
+             await Comment.insertMany(
                 [
                     {
-                        content: commentArr[Math.floor(Math.random() * (seedComments.length - 1))],
-                        post: "6104be0ab8d8a85685ad01e4",
+                        content: commentArr[Math.floor(Math.random() * (commentArr.length - 1))],
+                        post: postIdArr[i],
                         user: userIdArr[Math.floor(Math.random() * (userIdArr.length - 1))],
                     },
                 ]
@@ -127,4 +127,7 @@ const seedComments = async () => {
     } catch (error) {
         console.log(error);
     }
+    console.log("Comment seed");
 }
+
+seedComments();
