@@ -70,18 +70,18 @@ router.get("/:id", (req, res) => {
           return next();
         }
   
-        Post.findById(req.params.id, (error, foundPost) => {
+        Post.findById(req.params.id).populate("user").exec((error, foundPost) => {
           if (error) {
             console.log(error);
             req.error = error;
             return next();
           }
-  
+          console.log("FOUND POST", foundPost);
           const context = {
             post:foundPost,
             comments:allComments,
           };
-  
+          //console.log("FOUND COMMENTS", allComments);
           return res.render("posts/show", context);
         });
       });
