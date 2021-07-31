@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const { User } = require("../models");
+const User = require("../models/User");
 
 // register GET
 router.get("/register", (req, res) => {
@@ -16,23 +16,17 @@ router.get("/login", (req, res) => {
 // register POST
 router.post("/register", async (req, res) => {
     try {
-        // if password !== passwordTwo
-        // res.send(passwords do not match )
-
-        if (req.body.password !== req.body.passwordTwo) {
-            return res.send("passwords do not match");
-        }
-
         // check if user exists
         const foundUser = await User.exists({
-            $or: [{ email: req.body.email }, { username: req.body.username }, { avatar: req.body.avatar }, { biography: req.body.biography }],
+            $or: [{ email: req.body.email }, { username: req.body.username }],
         });
         // if user does exist
         // redirect to login
         if (foundUser) {
+            console.log("user exists already");
             return res.redirect("/login");
         }
-
+        console.log("register body info", req.body);
         //encryption
         const salt = await bcrypt.genSalt(10);
 
@@ -58,6 +52,7 @@ router.post("/login", async (req, res) => {
         const foundUser = await User.findOne({ email: req.body.email });
 
         if (!foundUser) {
+            console.log("User not found");
             return res.redirect("/register");
         }
         // NOTE Authentication
@@ -72,7 +67,7 @@ router.post("/login", async (req, res) => {
             id: foundUser._id,
             username: foundUser.username,
         };
-
+        console.log("Logged in!");
         return res.redirect("/gallery");
     } catch (error) {
         console.log(error);
