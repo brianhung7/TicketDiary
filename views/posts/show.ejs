@@ -21,7 +21,7 @@
                     <div class="comments">
                         <% comments.forEach(comment=> { %>
                             <div class="comment">
-                                <%= comment.content %>
+                                <%= comment.user.username  %> Says <%= comment.content %>
                             </div>
                             <% }) %>
                     </div>

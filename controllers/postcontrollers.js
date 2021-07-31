@@ -29,6 +29,7 @@ router.get("/new", (req, res) => {
 //create route
 router.post("/", async (req, res, next) => {
     try {
+        req.body.user = req.session.currentUser.id;
         const newPost = await Post.create(req.body);
         console.log("new post MADE", newPost);
         return res.redirect(`/gallery/${newPost.id}`);
@@ -42,22 +43,49 @@ router.post("/", async (req, res, next) => {
 
 
 //show single post route
-router.get("/:id", async (req, res, next) => {
-    try {
-        const foundPost = await Post.findById(req.params.id);
-        const allComments = await Comment.find({post: req.params.id});
-        const context = {
-            post: foundPost,
-            comments: allComments,
+// router.get("/:id", async (req, res, next) => {
+//     try {
+//         const foundPost = await Post.findById(req.params.id).populate("post user").exec();
+//         const allComments = await Comment.find({post: req.params.id}.populate("comment user").exec());
+//         const context = {
+//             post: foundPost,
+//             comments: allComments,
+//         }
+//         //console.log(context);
+//         return res.render("posts/show", context);
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// });
+
+router.get("/:id", (req, res) => {
+    Comment.find({post:req.params.id})
+      .populate("post user")
+      .exec((error, allComments) => {
+        if (error) {
+          console.log(error);
+          req.error = error;
+          return next();
         }
-        console.log(context);
-        return res.render("posts/show", context);
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-});
+  
+        Post.findById(req.params.id, (error, foundPost) => {
+          if (error) {
+            console.log(error);
+            req.error = error;
+            return next();
+          }
+  
+          const context = {
+            post:foundPost,
+            comments:allComments,
+          };
+  
+          return res.render("posts/show", context);
+        });
+      });
+  });
 
 //update route
 router.get("/:id/edit", async (req, res, next) => {

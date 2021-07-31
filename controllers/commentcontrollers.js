@@ -39,8 +39,7 @@ const Comment = require("../models/Comment");
 // "/" - POST - functional
 
 router.post("/", (req, res) => {
-    //req.body.user = req.session.currentUser.id;
-    req.body.user = "610486878cda7b49430d20c2";
+    req.body.user = req.session.currentUser.id;
     Comment.create(req.body, (error, createdComment) => {
         if (error) {
             console.log(error);

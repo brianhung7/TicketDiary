@@ -46,10 +46,10 @@ app.use(
 
 
 // // NOTE this will add a variable called user to EVERY EJS file
-// app.use((req, res, next) => {
-//   res.locals.user = req.session.currentUser;
-//   return next();
-// });
+app.use((req, res, next) => {
+  res.locals.user = req.session.currentUser;
+  return next();
+});
 
 // // create a location for our nav links
 app.use(require("./utils/navlinks"));

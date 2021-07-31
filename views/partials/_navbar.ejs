@@ -1,7 +1,7 @@
 <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="/gallery">
-            <img src="https://i.imgur.com/N8S72KQ.png" id="td__logo"/>
+            <img src="https://i.imgur.com/N8S72KQ.png" id="td__logo" />
             Gallery
         </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -12,12 +12,17 @@
     </div>
     <!-- this will add a link to the new route -->
     <div class="navbar-menu navbar-end">
-        <% if (typeof routes !=='undefined' ) { %>
-            <% routes.forEach((route)=> { %>
-                <a class="navbar-item" href="<%= route.href %>">
-                    <%= route.title %>
-                </a>
-                <% }) %>
-                    <% } %>
+        <% if (typeof user !=='undefined' ) { %>
+            
+                <%= user.username %>
+            
+            <% } %>
+                <% if (typeof routes !=='undefined' ) { %>
+                    <% routes.forEach((route)=> { %>
+                        <a class="navbar-item" href="<%= route.href %>">
+                            <%= route.title %>
+                        </a>
+                        <% }) %>
+                            <% } %>
     </div>
 </nav>
