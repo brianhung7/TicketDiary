@@ -3,14 +3,14 @@ const router = express.Router();
 const Post = require("../models/Post");
 
 //gallery route
-router.get("/", (req, res, next) => {
-    Post.find({}, (error, allPosts) => {
-        const context = {
-            posts: allPosts,
-        }
-        res.render("posts/gallery", context);
-    })
-})
+// router.get("/", (req, res, next) => {
+//     Post.find({}, (error, allPosts) => {
+//         const context = {
+//             posts: allPosts,
+//         }
+//         res.render("posts/gallery", context);
+//     })
+// })
 
 router.get("/", async (req, res, next) => {
     try {

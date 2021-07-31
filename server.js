@@ -51,7 +51,7 @@ app.set("view engine", "ejs");
 // // create a location for our nav links
 // app.use(require("./utils/navlinks"));
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // // NOTE allow body data for all routes
  app.use(express.urlencoded({ extended: true }));
