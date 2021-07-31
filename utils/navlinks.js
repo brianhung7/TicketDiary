@@ -16,6 +16,7 @@ module.exports = function navLinks(req, res, next) {
     res.locals.routes = [
         { href: "/login", title: "Login" },
         { href: "/register", title: "Register" },
+        { href: "/gallery/new", title: "New Post" },
     ];
     next();
 };

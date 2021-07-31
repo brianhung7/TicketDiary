@@ -54,21 +54,21 @@ router.post("/", (req, res) => {
 
 // remove review 
 
-router.delete("/:id", async (req, res) => {
-    try {
-        const foundReview = await Review.findById(req.params.id);
-        if (foundReview.user == req.session.currentUser.id) {
-            await foundReview.delete();
-            return res.redirect("/gallery");
-        } else {
-            return res.send("You are not allowed");
-        }
+// router.delete("/:id", async (req, res) => {
+//     try {
+//         const foundReview = await Review.findById(req.params.id);
+//         if (foundReview.user == req.session.currentUser.id) {
+//             await foundReview.delete();
+//             return res.redirect("/gallery");
+//         } else {
+//             return res.send("You are not allowed");
+//         }
 
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-})
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// })
 
 module.exports = router;
