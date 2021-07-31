@@ -3,29 +3,72 @@ const router = express.Router();
 const Post = require("../models/Post");
 
 //gallery route
-router.get("/",  (req, res, next) => {
-    Post.find({}, (error,allPosts)=>{
+router.get("/", (req, res, next) => {
+    Post.find({}, (error, allPosts) => {
         const context = {
-            posts:allPosts,
+            posts: allPosts,
         }
-        res.render("posts/gallery",context);
+        res.render("posts/gallery", context);
     })
 })
 
-router.get("/:id", async(req,res,next)=>{
-    try{
+router.get("/", async (req, res, next) => {
+    try {
+        const allPosts = await Post.find();
+        const context = {
+            posts: allPosts,
+        }
+        res.render("posts/gallery", context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
+router.get("/:id", async (req, res, next) => {
+    try {
         const foundPost = await Post.findById(req.params.id);
         //const allComments = await Review.find({post: req.params.id});
         const context = {
             post: foundPost,
         }
         console.log(context);
-        return res.render("posts/show",context);
-    } catch(error){
+        return res.render("posts/show", context);
+    } catch (error) {
         console.log(error);
-    req.error = error;
-    return next();
+        req.error = error;
+        return next();
     }
-})
+});
 
+
+//new route
+router.get("/new", (req, res) => {
+    const context = {};
+    return res.render("posts/new", context);
+});
+
+
+//create route
+router.post("/", async (req, res, next) => {
+    try {
+        console.log(req.body);
+        const newPost = await Post.create(req.body);
+        console.log("new post MADE", newPost);
+        return res.redirect(`/gallery/${newPost.id}`);
+    } catch (error) {
+        const context = {
+            error,
+        };
+        return res.render("posts/new", context);
+    }
+});
+
+
+//update route
+
+//update put route
+
+//delete route
 module.exports = router;

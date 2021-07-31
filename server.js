@@ -54,7 +54,7 @@ app.set("view engine", "ejs");
 // app.use(express.static("public"));
 
 // // NOTE allow body data for all routes
-// app.use(express.urlencoded({ extended: true }));
+ app.use(express.urlencoded({ extended: true }));
 
 // app.use(methodOverride("_method"));
 
