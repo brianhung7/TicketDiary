@@ -69,19 +69,16 @@ router.get("/:id", (req, res) => {
           req.error = error;
           return next();
         }
-  
         Post.findById(req.params.id).populate("user").exec((error, foundPost) => {
           if (error) {
             console.log(error);
             req.error = error;
             return next();
           }
-          console.log("FOUND POST", foundPost);
           const context = {
             post:foundPost,
             comments:allComments,
           };
-          //console.log("FOUND COMMENTS", allComments);
           return res.render("posts/show", context);
         });
       });
@@ -130,8 +127,8 @@ router.put("/:id", (req, res, next) => {
 router.delete("/:id", async (req, res, next) => {
     try {
       await Post.findByIdAndDelete(req.params.id);
-      //await Comment.deleteMany({ post: req.params.id });
-      console.log("Deleted item");
+      await Comment.deleteMany({ post: req.params.id });
+      //console.log("Deleted item");
       return res.redirect("/gallery");
     } catch (error) {
       console.log(error);

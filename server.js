@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 4000;
 const postCtrl = require("./controllers/postcontrollers.js");
 const commentCtrl = require("./controllers/commentcontrollers.js");
 const authCtrl = require("./controllers/auth_controller");
-//const usersCtrl = require("./controllers/")
+const usersCtrl = require("./controllers/usercontroller");
 
 /* SECTION App Config */
 
@@ -87,7 +87,7 @@ app.use(express.static("public"));
  app.use("/", authCtrl);
 app.use("/gallery", postCtrl);
 app.use("/comments", commentCtrl);
-//app.use("/users", usersCtrl);
+app.use("/users", usersCtrl);
 
 // 404
 app.get("/*", (req, res) => {

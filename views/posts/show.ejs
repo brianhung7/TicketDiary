@@ -6,9 +6,9 @@
     <body>
         <%- include('../partials/_navbar') %>
             <img class="poster_show" width=450px src="<%= post.image %>" alt="Placeholder image" />
-            <%= post.user.username %> 
-            <%= post.title %>
-                <%= post.description %>
+           <div>Username: <%= post.user.username %> </div>
+           <div>Post Title: <%= post.title %></div>
+           <div>Description: <%= post.description %></div>
                     <div class="comment_form">
                         <form action="../comments" method="POST">
                             <input class="input" type="text" name="content" placeholder="Leave a comment!" />
