@@ -10,6 +10,8 @@ router.get("/", async (req, res, next) => {
         const context = {
             posts: allPosts,
         }
+        const idAllPosts = await Post.find({},{_id:1}).map(function(item){return item._id;});
+        console.log(idAllPosts);
         res.render("posts/gallery", context);
     } catch (error) {
         console.log(error);

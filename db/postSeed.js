@@ -7,16 +7,19 @@ Post.insertMany(
             title: "Howdy",
             image: "https://i.imgur.com/L68FtMA.jpeg",
             description: "Good movie",
+            user: "210569a838391314d541f1fd",
         },
         {
             title: "Howdy",
             image: "https://i.imgur.com/L68FtMA.jpeg",
             description: "Good movie",
+            user: "210569a838391314d541f1fd",
         },  
         {
             title: "Howdy",
             image: "https://i.imgur.com/L68FtMA.jpeg",
             description: "Good movie",
+            user: "210569a838391314d541f1fd",
         },
     ],
     function(error, createdPosts){
