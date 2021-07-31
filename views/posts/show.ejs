@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <img src="<%= post.image %>" alt="Placeholder image" />
+    <img class="poster_show" width=450px src="<%= post.image %>" alt="Placeholder image" />
     <%= post.title %>
-    <%= post.description %>
+        <%= post.description %>
+            <div class="buttons">
+                <a class="button" href="/gallery/<%= post.id %>/edit">Edit Post</a>
+            </div>
 </body>
+
 </html>
