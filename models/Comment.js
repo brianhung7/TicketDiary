@@ -1,9 +1,9 @@
+require("../config/db.connection");
 // require mongoose
 const mongoose = require("mongoose");
 // set up schema
-const ComentSchema = new mongoose.Schema(
+const CommentSchema = new mongoose.Schema(
     {
-
         content: {
 
             type: String,
@@ -23,6 +23,6 @@ const ComentSchema = new mongoose.Schema(
 );
 
 // use schema in model
-const Comment = mongoose.model("Review", CommentSchema);
+const Comment = mongoose.model("Comment", CommentSchema);
 // export out model
 module.exports = Comment;

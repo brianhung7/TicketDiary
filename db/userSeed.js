@@ -28,10 +28,10 @@ User.insertMany(
 
         },
     ],
-    function (error, createdPosts) {
+    function (error, createdUsers) {
         if (error) return console.log(error);
         console.log("SEED COMPLETE");
-        console.log(createdPosts);
+        console.log(createdUsers);
 
     }
 )

@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('../partials/_head') %> 
+<%- include('../partials/_head') %>
 
-<body>
-    <%- include('../partials/_navbar') %> 
-    <img class="poster_show" width=450px src="<%= post.image %>" alt="Placeholder image" />
-    <%= post.title %>
-        <%= post.description %>
-            <div class="buttons">
-                <a class="button" href="/gallery/<%= post.id %>/edit">Edit Post</a>
-            </div>
-            <form action="/gallery/<%= post.id %>?_method=DELETE" method="POST">
-                <input class="button" type="submit" value="Delete Post" />
-            </form>
-</body>
+    <body>
+        <%- include('../partials/_navbar') %>
+            <img class="poster_show" width=450px src="<%= post.image %>" alt="Placeholder image" />
+            <%= post.title %>
+                <%= post.description %>
+                    <div class="comments">
+                        <% comments.forEach(comment=> { %>
+                            <div class="comment">
+                                <%= comment.content %>
+                            </div>
+                            <% }) %>
+                    </div>
+
+                    <div class="buttons">
+                        <a class="button" href="/gallery/<%= post.id %>/edit">Edit Post</a>
+                    </div>
+                    <form action="/gallery/<%= post.id %>?_method=DELETE" method="POST">
+                        <input class="button" type="submit" value="Delete Post" />
+                    </form>
+    </body>
 
 </html>
