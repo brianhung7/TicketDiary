@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const { User } = require("../models");
+const User = require("../models/User");
 
 // register GET
 router.get("/register", (req, res) => {
@@ -16,12 +16,6 @@ router.get("/login", (req, res) => {
 // register POST
 router.post("/register", async (req, res) => {
     try {
-        // if password !== passwordTwo
-        // res.send(passwords do not match )
-
-        if (req.body.password !== req.body.passwordTwo) {
-            return res.send("passwords do not match");
-        }
 
         // check if user exists
         const foundUser = await User.exists({

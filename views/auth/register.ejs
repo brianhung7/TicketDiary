@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/_head') %>
+
+    <body>
+        <%- include('../partials/_navbar') %>
+        <form action="/register" method="POST">
+            <% if (typeof error !=='undefined' ) { %>
+                <article class="message is-danger">
+                    <div class="message-header">
+                        <p>Danger</p>
+                    </div>
+                    <div class="message-body">
+                        <%= error.message %>
+                    </div>
+                </article>
+                <% } %>
+                    <div class="new__post__title">
+                        <input type="text" class="input" placeholder="Username" name="username" >
+                    </div>
+                    <div class="new__post__image">
+                        <input type="text" class="input" placeholder="Email" name="email" >
+                    </div>
+                    <div class="new__post__description">
+                        <input type="text" class="input" placeholder="Password" name="password" >
+                    </div>
+                    <div class="new__post__description">
+                        <input type="text" class="input" placeholder="Biography" name="biography" >
+                    </div>
+                    <div class="new__post__description">
+                        <input type="text" class="input" placeholder="Avatar" name="avatar" >
+                    </div>
+                    <div>
+                        <button class="button ">Sign Up</button>
+                    </div>
+        </form>
+
+    </body>
