@@ -21,6 +21,8 @@
         </div>
         <div>Description: <%= post.description %>
         </div>
+        <div>Likes: <%= likes.numLikes %>
+        </div>
         <div class="comment_form">
             <form action="../comments" method="POST">
                 <input class="input" type="text" name="content" placeholder="Leave a comment!" />
@@ -53,8 +55,7 @@
                 <input class="button" type="submit" value="Delete Post" />
             </form>
             <% } %>
-            <button value="<%=post.user._id%>,<%=post.image%>" onclick="test( this.value)">Like</button>
-            <form action="/gallery/<%= post.id %>?_method=LIKE" method="POST">
+            <form action="/likes/<%= post.id %>?_method=PUT" method="POST">
                 <input class="button" type="submit" value="Like Post" />
             </form>
 </body>

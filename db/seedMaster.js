@@ -2,6 +2,7 @@ const { ObjectId } = require('mongodb');
 const User = require("../models/User");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
+const Like = require("../models/Like");
 
 const posterArr = [
     {img: "https://i.imgur.com/e2vTyGY.jpeg",title:"Bridge to Terabithia"},
@@ -146,11 +147,34 @@ const seedComments = async () => {
     }
 }
 
+const seedLikes = async()=>{
+    try{
+        await  Like.deleteMany();
+        let idAllPosts = await Post.find({}, { _id: 1 });
+        let postIdArr = await idAllPosts.map(a => a._id);
+        for (let i = 0; i<posterArr.length;i++){
+            await Like.insertMany(
+                [
+                    {
+                        numLikes: 5,
+                        post: postIdArr[i],
+                        userArr: userIdArr[Math.floor(Math.random() * (userIdArr.length - 1))],
+                    }
+                ]
+            )
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 const seed = async () => {
     try {
         await seedUsers();
         await seedPosts();
         await seedComments();
+        await seedLikes();
     } catch (error) {
         console.log(error);
     }

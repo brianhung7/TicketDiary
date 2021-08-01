@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
+const Like = require("../models/Like");
 
 //gallery/search post route
 router.get("/", async (req, res, next) => {
@@ -61,9 +62,11 @@ router.get("/:id", async (req, res, next) => {
     try {
         const foundPost = await Post.findById(req.params.id).populate("user");
         const allComments = await Comment.find({ post: req.params.id }).populate("post user");
+        const foundLikes = await Like.findOne({post: req.params.id});
         const context = {
             post: foundPost,
             comments: allComments,
+            likes: foundLikes,
         }
         return res.render("posts/show", context);
     } catch (error) {
