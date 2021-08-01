@@ -39,7 +39,12 @@ const Comment = require("../models/Comment");
 // "/" - POST - functional
 
 router.post("/", (req, res) => {
-    req.body.user = req.session.currentUser.id;
+    //If user is logged in, use their id, otherwise use anonymous user
+    if (req.session.currentUser) {
+        req.body.user = req.session.currentUser.id;
+    } else {
+        req.body.user = "120569a838391314d541f1fd";
+    }
     Comment.create(req.body, (error, createdComment) => {
         if (error) {
             console.log(error);

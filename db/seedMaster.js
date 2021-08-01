@@ -52,6 +52,22 @@ bioArr = ["I spend most of my time watching movies, so much that I sometimes sta
 
 const seedUsers = async () => {
     await User.deleteMany();
+    await User.insertMany([
+        {
+            username: "Anonymous",
+            email: `anonymous@yahoo.com`,
+            password: 'sdf',
+            avatar: 'lajsf',
+            biography: "We are those who haven't logged in",
+            _id: ObjectId('120569a838391314d541f1fd'),
+
+        },
+    ],
+        function (error, createdUsers) {
+            if (error) return console.log(error);
+            //console.log("Anonymous made:", createdUsers);
+        }
+    )
     for (let i = 0; i < usernameArr.length; i++) {
         await User.insertMany([
             {
@@ -66,7 +82,6 @@ const seedUsers = async () => {
         ],
             function (error, createdUsers) {
                 if (error) return console.log(error);
-                //console.log("SEED COMPLETE");
                 //console.log("User seed made:", createdUsers);
             }
         )
