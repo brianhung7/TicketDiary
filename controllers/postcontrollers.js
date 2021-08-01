@@ -13,10 +13,14 @@ router.get("/", async (req, res, next) => {
             console.log(foundPosts);
         } else {
             foundPosts = await Post.find();
+            //$(".search__message").css("display", "none");
+            //document.getElementsByClassName("search__message").style.display = "none";
         }
         const context = {
             posts: foundPosts,
+            searchTerm: req.query.q,
         }
+        console.log(context);
         res.render("posts/gallery", context);
     } catch (error) {
         console.log(error);
