@@ -7,7 +7,7 @@
     <body>
         <%- include('../partials/_navbar') %>
             <img class="poster_show" width=450px src="<%= post.image %>" alt="Placeholder image" />
-           <div> <a href = "/users/<%= post.user.id %>"> Username: <%= post.user.username %> </a> </div>
+           <div> <a href = "/users/<%= post.user._id %>"> Username: <%= post.user.username %> </a> </div>
            <div>Post Title: <%= post.title %></div>
            <div>Description: <%= post.description %></div>
                     <div class="comment_form">
@@ -27,13 +27,14 @@
                             </div>
                             <% }) %>
                     </div>
-
+                    <% if ( typeof user !=='undefined' && post.user._id == user.id) { %> 
                     <div class="buttons">
                         <a class="button" href="/gallery/<%= post.id %>/edit">Edit Post</a>
                     </div>
                     <form action="/gallery/<%= post.id %>?_method=DELETE" method="POST">
                         <input class="button" type="submit" value="Delete Post" />
                     </form>
+                    <% } %> 
     </body>
 
 </html>

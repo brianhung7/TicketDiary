@@ -74,7 +74,7 @@ const seedUsers = async () => {
 }
 
 postTitleArr = ["Amazing Film!", "My Favorite Movie", "My Favorite Flick", "Best Picture Ever!", "A Pleasure To Watch!", "A Masterpiece!", "5 Stars All The Way", "A Great Date Movie!", "A Great Family Movie!"];
-postDescriptionArr = ["I can't believe how great it was!", "I can't watch to watch it again", "I have to tell you about this amazing film", "I hope they make a sequel very soon", "I brought my friends and family to see this and they loved it!", "This movie has so many great actors and actresses", "I absolutely loved this film"];
+postDescriptionArr = ["I can't believe how great it was!", "I can't watch to watch it again", "I have to tell you about this amazing film", "I hope they make a sequel very soon", "I brought my friends and family to see this and they loved it!", "This movie has so many great actors and actresses", "I absolutely loved this film!","This film was truly art in motion, a delight to the senses."];
 const seedPosts = async () => {
     try {
         await Post.deleteMany();
@@ -106,7 +106,7 @@ const seedPosts = async () => {
 
 
 
-commentArr = ["It's lovely to hear your thoughts on this movie!", "Hey what movie are you going to watch next?", "Hey let's catch a movie sometime!", "Nice review, great work", "Amazing job sharing this with us!", "I'm so excited to hear your thoughts!", "Can't wait to see what else happens in the series", "Nice to hear your thoughts!", "Wow, great info!", "Yo let's catch a film sometime!", "Simpsons did it first", "Excellent thoughts!", "This was my favorite film as a child", "Hey cousin, let's go bowling!"];
+commentArr = ["It's lovely to hear your thoughts on this movie!", "Hey what movie are you going to watch next?", "Hey let's catch a movie sometime!", "Nice review, great work", "Amazing job sharing this with us!", "I'm so excited to hear your thoughts!", "Can't wait to see what else happens in the series", "Nice to hear your thoughts!", "Wow, great info!", "Yo let's catch a film sometime!", "Simpsons did it first", "Excellent thoughts!", "This was my favorite film as a child", "Hey cousin, let's go bowling!","Wow I remember watching this when I was young."];
 const commentsPerPost = 3;
 const seedComments = async () => {
     try {

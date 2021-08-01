@@ -59,7 +59,6 @@ router.get("/:id", async (req, res, next) => {
             post: foundPost,
             comments: allComments,
         }
-        //console.log(context);
         return res.render("posts/show", context);
     } catch (error) {
         console.log(error);

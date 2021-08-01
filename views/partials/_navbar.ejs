@@ -20,7 +20,7 @@
     <div class="navbar-menu navbar-end">
         <% if (typeof user !=='undefined' ) { %>
 
-            <%= user.username %>
+            <a href="/users/<%= user.id %>"><%= user.username %></a>
 
                 <% } %>
                     <% if (typeof routes !=='undefined' ) { %>
