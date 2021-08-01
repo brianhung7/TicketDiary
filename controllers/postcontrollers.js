@@ -29,7 +29,13 @@ router.get("/", async (req, res, next) => {
 
 //new route
 router.get("/new", (req, res) => {
-    const context = {};
+    let context = {};
+    if(!req.session.currentUser){
+        context = {
+            error: {message:"Nice try buddy, but you SHALL NOT PASS"},
+        };
+        return res.render("404", context);
+    }
     return res.render("posts/new", context);
 });
 
@@ -99,7 +105,6 @@ router.get("/:id/edit", async (req, res, next) => {
             const context = {
                 error: {message:"Nice try buddy, but you SHALL NOT PASS"},
             };
-            console.log(context);
             return res.render("404", context);
         }
         //const allComments = await Review.find({post: req.params.id});
