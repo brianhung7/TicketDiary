@@ -2,46 +2,6 @@ const { ObjectId } = require('mongodb');
 const User = require("../models/User");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
-/*const posterArr = ["https://i.imgur.com/e2vTyGY.jpeg",
-    "https://i.imgur.com/dJ6RuXM.jpeg",
-    "https://i.imgur.com/TGXlwTX.jpeg",
-    "https://i.imgur.com/28PaivW.jpeg",
-    "https://i.imgur.com/nYuRuq7.jpeg",
-    "https://i.imgur.com/HMckwPg.jpeg",
-    "https://i.imgur.com/q6qPIx5.jpeg",
-    "https://i.imgur.com/moLl4EL.jpeg",
-    "https://i.imgur.com/iz7NzLA.jpeg",
-    "https://i.imgur.com/mHieWsx.jpeg",
-    "https://i.imgur.com/mHGX7GQ.jpeg",
-    "https://i.imgur.com/JFS6rfm.jpeg",
-    "https://i.imgur.com/tLv7mLH.jpeg",
-    "https://i.imgur.com/zFjPkGE.jpeg",
-    "https://i.imgur.com/nDnKNZw.jpeg",
-    "https://i.imgur.com/TaVDf2s.jpeg",
-    "https://i.imgur.com/RJ1mG6D.jpeg",
-    "https://i.imgur.com/5jLA3P4.jpeg",
-    "https://i.imgur.com/Q8n6Djw.jpeg",
-    "https://i.imgur.com/4X3cilw.jpeg",
-    "https://i.imgur.com/0A9eAvh.jpeg",
-    "https://i.imgur.com/mQSNTqm.jpeg",
-    "https://i.imgur.com/nbIMoWS.jpeg",
-    "https://i.imgur.com/TushU6a.jpeg",
-    "https://i.imgur.com/F6sTJ1g.jpeg",
-    "https://i.imgur.com/xM9pZmE.jpeg",
-    "https://i.imgur.com/LzVn4XU.jpeg",
-    "https://i.imgur.com/LKvPyv8.jpeg",
-    "https://i.imgur.com/PiSsFRv.jpeg",
-    "https://i.imgur.com/jjY0sHK.jpeg",
-    "https://i.imgur.com/mXTL9dp.jpeg",
-    "https://i.imgur.com/XWid1W4.jpeg",
-    "https://i.imgur.com/XV3PJJX.jpeg",
-    "https://i.imgur.com/wLdqcSp.jpeg",
-    "https://i.imgur.com/kxNEx8a.jpeg",
-    "https://i.imgur.com/YK7BX4e.jpeg",
-    "https://i.imgur.com/NgnOSvm.jpeg",
-    "https://i.imgur.com/6FsjOkQ.png"];
-*/
-
 
 const posterArr = [
     {img: "https://i.imgur.com/e2vTyGY.jpeg",title:"Bridge to Terabithia"},
@@ -83,8 +43,12 @@ const posterArr = [
     {img: "https://i.imgur.com/NgnOSvm.jpeg",title:"The Incredible Hulk"},
     {img: "https://i.imgur.com/6FsjOkQ.png",title:"Futurama"},
 ]
+
 usernameArr = ["Brian44", "Arnav45", "Pham94", "Singh55", "MovieGuy33"];
 userIdArr = ['220569a838391314d541f1fd', '230569a838391314d541f1fd', '240569a838391314d541f1fd', '250569a838391314d541f1fd', '260569a838391314d541f1fd'];
+bioArr = ["I spend most of my time watching movies, so much that I sometimes start making films in my head.",
+"I love movies so much I sometimes don't know the boundary between imagination and reality.",
+"Lover of film, I live to enrich myself and learn through film, they are art and I am the curator."]
 
 const seedUsers = async () => {
     await User.deleteMany();
@@ -92,10 +56,10 @@ const seedUsers = async () => {
         await User.insertMany([
             {
                 username: usernameArr[i],
-                email: `${usernameArr[i]}@yahoo.com.com`,
+                email: `${usernameArr[i]}@yahoo.com`,
                 password: 'sdf',
                 avatar: 'lajsf',
-                biography: 'asd',
+                biography: bioArr[Math.floor(Math.random() * (bioArr.length - 1))],
                 _id: ObjectId(userIdArr[i]),
 
             },

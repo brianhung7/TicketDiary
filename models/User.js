@@ -21,16 +21,9 @@ const userSchema = new mongoose.Schema(
         biography: {
             type: String,
         },
-        //only here for seeding, COMMENT OUT AFTER
-        // _id: {
-        //     type: String,
-        // }
     },
-
     {
         timestamps: true,
-        //only here for seeding, COMMENT OUT AFTER
-        //  _id: false, 
     }
 );
 
