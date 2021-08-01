@@ -4,6 +4,8 @@
 <body>
   <%- include('../partials/_navbar',{routes}) %> 
     <main class="container__gallery__user">
+      <div> Username: <%= user.username %> </div>
+      <div> Biography <%= user.biography %> </div>
         <div class="columns">
           <% for(let idx = 0; idx < posts.length; idx++){ %> <% const post =
           posts[idx] %>

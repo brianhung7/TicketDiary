@@ -80,8 +80,6 @@ app.use(express.static("public"));
 
 
 /* !SECTION */
-// app.get("/", (req, res) => res.redirect("/products"));
-
 
 // /* SECTION Routes */
  app.use("/", authCtrl);
