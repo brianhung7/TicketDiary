@@ -10,23 +10,29 @@ router.get("/", (req, res, next) => {
 })
 
 
+//Increase like counter for a post
 router.put("/:id", async (req, res, next) => {
     try {
-        const foundPost = await Post.findById(req.params.id).populate("user");
-        const allComments = await Comment.find({ post: req.params.id }).populate("post user");
-        const foundLikes = await Like.findOne({post: req.params.id});
-        console.log("BEFORE UPDATE", foundLikes);
-        foundLikes.numLikes++;
-        await Like.findByIdAndUpdate(
-            foundLikes._id,
-            {numLikes: foundLikes.numLikes},
-            {new:true},
-        )
-        const context = {
-            post: foundPost,
-            comments: allComments,
-            likes: foundLikes,
+        const foundLikes = await Like.findOne({ post: req.params.id });
+
+        let userInArray = false
+        for (i = 0; i < foundLikes.userArr.length;i++) {
+            if (foundLikes.userArr[i] == req.session.currentUser.id) {
+                userInArray = true;
+            }
         }
+        if (!userInArray) {
+            foundLikes.numLikes++;
+            foundLikes.userArr.push(req.session.currentUser.id);
+            await Like.findByIdAndUpdate(
+                foundLikes._id,
+                { numLikes: foundLikes.numLikes,
+                 userArr: foundLikes.userArr,
+                },
+                { new: true },
+            )
+        }
+
         return res.redirect(`/gallery/${req.params.id}`);
     } catch (error) {
         console.log(error);
