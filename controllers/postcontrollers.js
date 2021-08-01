@@ -44,46 +44,46 @@ router.post("/", async (req, res, next) => {
 
 
 //show single post route
-// router.get("/:id", async (req, res, next) => {
-//     try {
-//         const foundPost = await Post.findById(req.params.id).populate("post user").exec();
-//         const allComments = await Comment.find({post: req.params.id}.populate("comment user").exec());
-//         const context = {
-//             post: foundPost,
-//             comments: allComments,
-//         }
-//         //console.log(context);
-//         return res.render("posts/show", context);
-//     } catch (error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//     }
-// });
-
-router.get("/:id", (req, res) => {
-    Comment.find({post:req.params.id})
-      .populate("post user")
-      .exec((error, allComments) => {
-        if (error) {
-          console.log(error);
-          req.error = error;
-          return next();
+router.get("/:id", async (req, res, next) => {
+    try {
+        const foundPost = await Post.findById(req.params.id).populate("user");
+        const allComments = await Comment.find({post: req.params.id}).populate("post user");
+        const context = {
+            post: foundPost,
+            comments: allComments,
         }
-        Post.findById(req.params.id).populate("user").exec((error, foundPost) => {
-          if (error) {
-            console.log(error);
-            req.error = error;
-            return next();
-          }
-          const context = {
-            post:foundPost,
-            comments:allComments,
-          };
-          return res.render("posts/show", context);
-        });
-      });
-  });
+        //console.log(context);
+        return res.render("posts/show", context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
+// router.get("/:id", (req, res) => {
+//     Comment.find({post:req.params.id})
+//       .populate("post user")
+//       .exec((error, allComments) => {
+//         if (error) {
+//           console.log(error);
+//           req.error = error;
+//           return next();
+//         }
+//         Post.findById(req.params.id).populate("user").exec((error, foundPost) => {
+//           if (error) {
+//             console.log(error);
+//             req.error = error;
+//             return next();
+//           }
+//           const context = {
+//             post:foundPost,
+//             comments:allComments,
+//           };
+//           return res.render("posts/show", context);
+//         });
+//       });
+//   });
 
 //update route
 router.get("/:id/edit", async (req, res, next) => {

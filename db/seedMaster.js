@@ -1,6 +1,3 @@
-//user ids can be from a set array of ids
-//comment ids | comment strings can be from a set array of comments
-//post ids have to be unique
 const { ObjectId } = require('mongodb');
 const User = require("../models/User");
 const Post = require("../models/Post");
@@ -49,36 +46,35 @@ const posterArr = ["https://i.imgur.com/e2vTyGY.jpeg",
 usernameArr = ["Brian44", "Arnav45", "Pham94", "Singh55", "MovieGuy33"];
 userIdArr = ['220569a838391314d541f1fd', '230569a838391314d541f1fd', '240569a838391314d541f1fd', '250569a838391314d541f1fd', '260569a838391314d541f1fd'];
 
+const seedUsers = async () => {
+    await User.deleteMany();
+    for (let i = 0; i < usernameArr.length; i++) {
+        await User.insertMany([
+            {
+                username: usernameArr[i],
+                email: `${usernameArr[i]}@yahoo.com.com`,
+                password: 'sdf',
+                avatar: 'lajsf',
+                biography: 'asd',
+                _id: ObjectId(userIdArr[i]),
 
-
-/*
-for (let i = 0; i < usernameArr.length; i++) {
-    User.insertMany([
-        {
-            username: usernameArr[i],
-            email: `${usernameArr[i]}@getMaxListeners.com`,
-            password: 'sdf',
-            avatar: 'lajsf',
-            biography: 'asd',
-            _id: ObjectId(userIdArr[i]),
-
-        },
-    ],
-        function (error, createdUsers) {
-            if (error) return console.log(error);
-            console.log("SEED COMPLETE");
-            console.log(createdUsers);
-        }
-    )
+            },
+        ],
+            function (error, createdUsers) {
+                if (error) return console.log(error);
+                //console.log("SEED COMPLETE");
+                //console.log("User seed made:", createdUsers);
+            }
+        )
+    }
 }
-*/
+//seedUsers();
 
-/*
 postTitleArr = ["Amazing Film!", "My Favorite Movie", "My Favorite Flick", "Best Picture Ever!", "A Pleasure To Watch!", "A Masterpiece!", "5 Stars All The Way", "A Great Date Movie!", "A Great Family Movie!"];
 postDescriptionArr = ["I can't believe how great it was!", "I can't watch to watch it again", "I have to tell you about this amazing film", "I hope they make a sequel very soon", "I brought my friends and family to see this and they loved it!", "This movie has so many great actors and actresses", "I absolutely loved this film"];
 const seedPosts = async () => {
     try {
-        //await Post.deleteMany();
+        await Post.deleteMany();
         for (let i = 0; i < posterArr.length; i++) {
             const newPosts = await Post.insertMany(
                 [
@@ -93,7 +89,7 @@ const seedPosts = async () => {
                 function (error, createdPosts) {
                     if (error) return console.log(error);
                     //console.log("SEED COMPLETE");
-                    console.log(createdPosts);
+                    //console.log("Post seed made:", createdPosts);
 
                 }
             )
@@ -102,19 +98,19 @@ const seedPosts = async () => {
         console.log(error);
     }
 }
+//seedPosts();
 
-seedPosts();
-*/
 
 
 
 commentArr = ["It's lovely to hear your thoughts on this movie!", "Hey what movie are you going to watch next?", "Hey let's catch a movie sometime!", "Nice review, great work", "Amazing job sharing this with us!", "I'm so excited to hear your thoughts!", "Can't wait to see what else happens in the series"];
 const seedComments = async () => {
     try {
+        await Comment.deleteMany();
         let idAllPosts = await Post.find({}, { _id: 1 });
-        let postIdArr = idAllPosts.map(a => a._id);
+        let postIdArr = await idAllPosts.map(a => a._id);
         for (let i = 0; i < posterArr.length; i++) {
-             await Comment.insertMany(
+            await Comment.insertMany(
                 [
                     {
                         content: commentArr[Math.floor(Math.random() * (commentArr.length - 1))],
@@ -127,7 +123,18 @@ const seedComments = async () => {
     } catch (error) {
         console.log(error);
     }
-    console.log("Comment seed");
+    //console.log("Comment seed");
+}
+//seedComments();
+
+const seed = async() =>{
+    try{
+        await seedUsers();
+        await seedPosts();
+        await seedComments();
+    } catch (error){
+        console.log(error);
+    }
 }
 
-seedComments();
+seed();
