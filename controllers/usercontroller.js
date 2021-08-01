@@ -8,9 +8,9 @@ router.get("/:id", async (req, res, next) => {
     try {
         const userPosts = await Post.find({ user: req.params.id });
         const foundUser = await User.findById(req.params.id);
-        const context = { 
-            posts:userPosts, 
-            userProfile:foundUser,
+        const context = {
+            posts: userPosts,
+            userProfile: foundUser,
         };
         //console.log(context);
         res.render("users/profile", context);
@@ -21,11 +21,19 @@ router.get("/:id", async (req, res, next) => {
     }
 });
 
-router.get("/:id/favorites", async (req, res, next)=>{
-    try{
-        const likedPosts = await Like.find({userArr:req.params.id});
-        console.log(likedPosts);
-
+router.get("/:id/favorites", async (req, res, next) => {
+    try {
+        const likedPosts = await Like.find({ userArr: req.params.id });
+        const foundUser = await User.findById(req.params.id);
+        const postArr = [];
+        for (i = 0; i < likedPosts.length; i++) {
+            postArr.push(await Post.findById(likedPosts[i].post));
+        }
+        context = {
+            posts:postArr,
+            userProfile:foundUser,
+        }
+        res.render("users/profilefavorites",context);
     } catch (error) {
         console.log(error);
         req.error = error;

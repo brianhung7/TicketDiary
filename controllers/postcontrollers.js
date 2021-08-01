@@ -19,6 +19,7 @@ router.get("/", async (req, res, next) => {
             posts: foundPosts,
             searchTerm: req.query.q,
         }
+        //console.log(context.posts);
         res.render("posts/gallery", context);
     } catch (error) {
         console.log(error);

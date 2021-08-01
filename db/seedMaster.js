@@ -156,7 +156,7 @@ const seedLikes = async()=>{
             await Like.insertMany(
                 [
                     {
-                        numLikes: 5,
+                        numLikes: Math.floor(Math.random() * 200),
                         post: postIdArr[i],
                         userArr: userIdArr[Math.floor(Math.random() * (userIdArr.length - 1))],
                     }
