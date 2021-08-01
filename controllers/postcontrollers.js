@@ -32,7 +32,7 @@ router.get("/new", (req, res) => {
     let context = {};
     if(!req.session.currentUser){
         context = {
-            error: {message:"Nice try buddy, but you SHALL NOT PASS"},
+            error: {message:"Nice try buddy, but you SHALL NOT PASS. Why don't you try signing up for an account?"},
         };
         return res.render("404", context);
     }
@@ -154,5 +154,15 @@ router.delete("/:id", async (req, res, next) => {
         return next();
     }
 });
-
+/*
+router.like("/:id", async (req,res,next)=>{
+    try{
+        console.log("liked");
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+*/
 module.exports = router;
