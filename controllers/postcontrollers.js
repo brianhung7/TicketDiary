@@ -95,11 +95,17 @@ router.get("/:id", async (req, res, next) => {
 router.get("/:id/edit", async (req, res, next) => {
     try {
         const foundPost = await Post.findById(req.params.id);
+        if(!req.session.currentUser || foundPost.user != req.session.currentUser.id){
+            const context = {
+                error: {message:"Nice try buddy, but you SHALL NOT PASS"},
+            };
+            console.log(context);
+            return res.render("404", context);
+        }
         //const allComments = await Review.find({post: req.params.id});
         const context = {
             post: foundPost,
         }
-        //console.log("EDIT GET ROUTE", context);
         return res.render("posts/edit", context);
     } catch (error) {
         console.log(error);
