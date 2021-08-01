@@ -3,14 +3,20 @@ const router = express.Router();
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
 
-//gallery route
+//gallery/search post route
 router.get("/", async (req, res, next) => {
     try {
-        const allPosts = await Post.find();
-        const context = {
-            posts: allPosts,
+        let foundPosts = [];
+        if (req.query.q) {
+            const query = { $text: { $search: `${req.query.q}` } };
+            foundPosts = await Post.find(query);
+            console.log(foundPosts);
+        } else {
+            foundPosts = await Post.find();
         }
-
+        const context = {
+            posts: foundPosts,
+        }
         res.render("posts/gallery", context);
     } catch (error) {
         console.log(error);
@@ -47,7 +53,7 @@ router.post("/", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
     try {
         const foundPost = await Post.findById(req.params.id).populate("user");
-        const allComments = await Comment.find({post: req.params.id}).populate("post user");
+        const allComments = await Comment.find({ post: req.params.id }).populate("post user");
         const context = {
             post: foundPost,
             comments: allComments,
@@ -127,15 +133,15 @@ router.put("/:id", (req, res, next) => {
 //delete route
 router.delete("/:id", async (req, res, next) => {
     try {
-      await Post.findByIdAndDelete(req.params.id);
-      await Comment.deleteMany({ post: req.params.id });
-      //console.log("Deleted item");
-      return res.redirect("/gallery");
+        await Post.findByIdAndDelete(req.params.id);
+        await Comment.deleteMany({ post: req.params.id });
+        //console.log("Deleted item");
+        return res.redirect("/gallery");
     } catch (error) {
-      console.log(error);
-      req.error = error;
-      return next();
+        console.log(error);
+        req.error = error;
+        return next();
     }
-  });
+});
 
 module.exports = router;
