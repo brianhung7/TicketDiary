@@ -1,20 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const Post = require("../models/Post");
-const User = require("../models/User");
-const Comment = require("../models/Comment");
 const Like = require("../models/Like");
-
-router.get("/", (req, res, next) => {
-    res.send("hi");
-})
 
 
 //Increase like counter for a post
 router.put("/:id", async (req, res, next) => {
     try {
         const foundLikes = await Like.findOne({ post: req.params.id });
-
+        //Checks if user already liked a post
         let userInArray = false
         for (i = 0; i < foundLikes.userArr.length;i++) {
             if (foundLikes.userArr[i] == req.session.currentUser.id) {

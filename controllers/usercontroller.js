@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
-const Comment = require("../models/Comment");
 const User = require("../models/User");
+const Like = require("../models/Like");
 
 router.get("/:id", async (req, res, next) => {
     try {
@@ -10,9 +10,9 @@ router.get("/:id", async (req, res, next) => {
         const foundUser = await User.findById(req.params.id);
         const context = { 
             posts:userPosts, 
-            user:foundUser,
+            userProfile:foundUser,
         };
-        console.log(context);
+        //console.log(context);
         res.render("users/profile", context);
     } catch (error) {
         console.log(error);
@@ -20,4 +20,19 @@ router.get("/:id", async (req, res, next) => {
         return next();
     }
 });
+
+router.get("/:id/favorites", async (req, res, next)=>{
+    try{
+        const likedPosts = await Like.find({userArr:req.params.id});
+        console.log(likedPosts);
+
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+
 module.exports = router;
+
