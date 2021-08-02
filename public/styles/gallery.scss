@@ -1,24 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 // Variable
 $movie-blue: #18222c;
 $san-juan: #2d4e68;
 $bermuda: #77d7b9;
 $movie-red: #ff5757;
 $black: #000;
-$open-sans: 'Open Sans',
-sans-serif;
+$font: 'Inconsolata', monospace;
+
 
 // clear-fix mixin
-.navbar.is-fixed-top{
-  display: flex;
-  justify-content: space-between;
-  font-size: 24px;
-  // background-color: $movie-blue;
-  color: $movie-red;
-}
-#td__logo{
-  width: 40px;
-}
+// .navbar.is-fixed-top{
+//   display: flex;
+//   justify-content: space-between;
+//   font-size: 24px;
+//   // background-color: $movie-blue;
+//   color: $movie-red;
+// }
+
 .columns{
   display: grid;
   grid-gap: 20px;
@@ -47,7 +46,7 @@ sans-serif;
 body {
   background-color: $movie-blue;
   height: 100vh;
-  font-family: $open-sans;
+  font-family: $font;
   
 }
 
@@ -56,7 +55,7 @@ a {
 }
 
 h1 {
-  font-family: $open-sans;
+  font-family: $font;
   font-weight: 300;
 }
 
