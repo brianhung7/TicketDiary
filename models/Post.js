@@ -24,6 +24,7 @@ const postSchema = new mongoose.Schema(
         numComments:{
             type: Number,
             min: 0,
+            default: 0,
         }
     },
     {
