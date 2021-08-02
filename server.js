@@ -89,6 +89,12 @@ app.use("/comments", commentCtrl);
 app.use("/users", usersCtrl);
 app.use("/likes", likesCtrl);
 
+
+
+app.get("/", (req, res, next)=>{
+  res.render("landingPage/home");
+})
+
 // 404
 app.get("/*", (req, res) => {
     const context = {
