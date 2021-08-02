@@ -8,24 +8,6 @@ $black: #000;
 $open-sans: 'Open Sans',
 sans-serif;
 
-.navbar.is-fixed-top{
-  display: flex;
-  justify-content: space-between;
-  font-size: 24px;
-  background-color: darkgrey;
-}
-
-
-#td__logo{
-  width: 40px;
-}
-.columns{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
-
-}
-
-
 // clear-fix mixin
 @mixin cf {
   &::before,

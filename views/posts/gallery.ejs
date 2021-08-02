@@ -14,11 +14,11 @@
             <div class="columns">
               <% for(let idx=0; idx < posts.length; idx++){ %>
                 <% const post=posts[idx] %>
-                  <div class="column" style="background-image: url('<%= post.image %>');">
+                  <div class="column">
                     <!-- <article class="card"> -->
 
                     <div class="example-2 card">
-                      <div class="wrapper">
+                      <div class="wrapper" style="background-image: url('<%= post.image %>');">
                         <div class="header">
                           <!-- <div class="date">
         <span class="day">12</span>
