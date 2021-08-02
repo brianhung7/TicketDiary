@@ -21,6 +21,7 @@ const likeSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
+likeSchema.index({'$**': 'text'});
 // use schema in model
 const Like = mongoose.model("Like", likeSchema);
 // export out model
