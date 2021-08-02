@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   font-size: 24px;
-  background-color: #18222c;
   color: #ff5757;
 }
 
@@ -28,10 +27,6 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.columns{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
 a {
   text-decoration: none;
 }
