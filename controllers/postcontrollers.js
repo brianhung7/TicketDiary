@@ -8,18 +8,27 @@ const Like = require("../models/Like");
 router.get("/", async (req, res, next) => {
     try {
         let foundPosts = [];
+        let allLikes = [];
+        let allComments = [];
         if (req.query.q) {
             const query = { $text: { $search: `${req.query.q}` } };
             foundPosts = await Post.find(query);
-            //console.log(foundPosts);
+            for (let i = 0; i < foundPosts.length; i++) {
+                let foundLike = await Like.findOne({ post: `${foundPosts[i]._id}` });
+                allLikes.push(foundLike);
+            }
         } else {
             foundPosts = await Post.find();
+            allLikes = await Like.find();
         }
+        //console.log(allLikes);
+        allComments = await Comment.find();
+        //console.log(allComments);
         const context = {
             posts: foundPosts,
             searchTerm: req.query.q,
+            likes: allLikes,
         }
-        //console.log(context.posts);
         res.render("posts/gallery", context);
     } catch (error) {
         console.log(error);
@@ -32,9 +41,9 @@ router.get("/", async (req, res, next) => {
 //new route
 router.get("/new", (req, res) => {
     let context = {};
-    if(!req.session.currentUser){
+    if (!req.session.currentUser) {
         context = {
-            error: {message:"Nice try buddy, but you SHALL NOT PASS. Why don't you try signing up for an account?"},
+            error: { message: "Nice try buddy, but you SHALL NOT PASS. Why don't you try signing up for an account?" },
         };
         return res.render("404", context);
     }
@@ -63,7 +72,7 @@ router.get("/:id", async (req, res, next) => {
     try {
         const foundPost = await Post.findById(req.params.id).populate("user");
         const allComments = await Comment.find({ post: req.params.id }).populate("post user");
-        const foundLikes = await Like.findOne({post: req.params.id});
+        const foundLikes = await Like.findOne({ post: req.params.id });
         const context = {
             post: foundPost,
             comments: allComments,
@@ -105,9 +114,9 @@ router.get("/:id", async (req, res, next) => {
 router.get("/:id/edit", async (req, res, next) => {
     try {
         const foundPost = await Post.findById(req.params.id);
-        if(!req.session.currentUser || foundPost.user != req.session.currentUser.id){
+        if (!req.session.currentUser || foundPost.user != req.session.currentUser.id) {
             const context = {
-                error: {message:"Nice try buddy, but you SHALL NOT PASS"},
+                error: { message: "Nice try buddy, but you SHALL NOT PASS" },
             };
             return res.render("404", context);
         }
