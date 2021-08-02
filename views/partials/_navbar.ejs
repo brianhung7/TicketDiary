@@ -10,19 +10,25 @@
             <span aria-hidden="true"></span>
         </a>
     </div>
+    <form>
+        <div class="searchbar">
+            <input action="gallery" class="input" type="search" placeholder="Search" name="q">
+            <input type="submit" class="button" id="search__button" value="Search">
+        </div>
+    </form>
     <!-- this will add a link to the new route -->
     <div class="navbar-menu navbar-end">
         <% if (typeof user !=='undefined' ) { %>
-            
-                <%= user.username %>
-            
-            <% } %>
-                <% if (typeof routes !=='undefined' ) { %>
-                    <% routes.forEach((route)=> { %>
-                        <a class="navbar-item" href="<%= route.href %>">
-                            <%= route.title %>
-                        </a>
-                        <% }) %>
-                            <% } %>
+
+            <a href="/users/<%= user.id %>"><%= user.username %></a>
+
+                <% } %>
+                    <% if (typeof routes !=='undefined' ) { %>
+                        <% routes.forEach((route)=> { %>
+                            <a class="navbar-item" href="<%= route.href %>">
+                                <%= route.title %>
+                            </a>
+                            <% }) %>
+                                <% } %>
     </div>
 </nav>
