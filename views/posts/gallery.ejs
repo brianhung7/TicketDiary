@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/_head') %>
+  <link rel="stylesheet" href="/styles/gallery.css">
 
   <body>
     <%- include('../partials/_navbar',{routes}) %>
@@ -14,28 +15,44 @@
               <% for(let idx=0; idx < posts.length; idx++){ %>
                 <% const post=posts[idx] %>
                   <div class="column">
-                    <article class="card">
-                      <section class="card-image">
-                        <figure class="image">
-                          <img src="<%= post.image %>" alt="Placeholder image" width=250px />
-                        </figure>
-                      </section>
-                      <div class="card-content">
-                        <div class="content">
-                          <h3>
-                            <a href="/gallery/<%= post.id %>">
-                              <%= post.title %>
-                            </a>
-                          </h3>
-                          <p>
-                            <%= post.description %>
-                          </p>
+                    <!-- <article class="card"> -->
+
+                    <div class="example-2 card">
+                      <div class="wrapper" style="background-image: url('<%= post.image %>');">
+                        <div class="header">
+                          <!-- <div class="date">
+        <span class="day">12</span>
+        <span class="month">Aug</span>
+        <span class="year">2016</span>
+      </div> -->
+                          <!-- <ul class="menu-content">
+        <li>
+          <a href="#" class="fa fa-bookmark-o"></a>
+        </li>
+        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+      </ul> -->
+                        </div>
+                        <div class="data">
+                          <div class="content">
+                            <span class="author">Arnav Singh</span>
+                            <h1 class="title"><a href="/gallery/<%= post.id %>">
+                                <%= post.title %>
+                              </a></h1>
+                            <p class="text">
+                              <%= post.description %>
+                            </p>
+                            <a href="#" class="button">Read more</a>
+                          </div>
                         </div>
                       </div>
-                    </article>
+
+                    </div>
+                    <!-- example end -->
+                    <!-- </article> -->
                   </div>
                   <% } %>
-            </div>
+
       </main>
   </body>
 
