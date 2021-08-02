@@ -15,23 +15,23 @@
               <% for(let idx=0; idx < posts.length; idx++){ %>
                 <% const post=posts[idx] %>
                   <div class="column">
-                    <!-- <article class="card"> -->
+                    <!-- <article class=> -->
 
                     <div class="example-2 card">
                       <div class="wrapper" style="background-image: url('<%= post.image %>');">
+
                         <div class="header">
-                          <!-- <div class="date">
-        <span class="day">12</span>
-        <span class="month">Aug</span>
-        <span class="year">2016</span>
-      </div> -->
-                          <!-- <ul class="menu-content">
-        <li>
-          <a href="#" class="fa fa-bookmark-o"></a>
-        </li>
-        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
-        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
-      </ul> -->
+                          <ul class="menu-content">
+                            <li>
+                              <a href="#" class="fa fa-bookmark-o"></a>
+                            </li>
+                            <li><a href="#" class="fa fa-heart-o"><span>
+                                  <%=likes[idx].numLikes%>
+                                </span></a></li>
+                            <li><a href="#" class="fa fa-comment-o"><span>
+                                  <%=post.numComments%>
+                                </span></a></li>
+                          </ul>
                         </div>
                         <div class="data">
                           <div class="content">
@@ -43,7 +43,7 @@
                               <%= post.description %>
                               COMMENTS <%=post.numComments%>
                             </p>
-                            <a href="#" class="button">Read more</a>
+                            <a href="/gallery/<%= post.id %>" class="button">Read more</a>
                           </div>
                         </div>
                       </div>
