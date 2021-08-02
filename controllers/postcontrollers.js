@@ -11,7 +11,7 @@ router.get("/", async (req, res, next) => {
         if (req.query.q) {
             const query = { $text: { $search: `${req.query.q}` } };
             foundPosts = await Post.find(query);
-            console.log(foundPosts);
+            //console.log(foundPosts);
         } else {
             foundPosts = await Post.find();
         }
