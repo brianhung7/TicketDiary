@@ -9,7 +9,6 @@ router.get("/", async (req, res, next) => {
     try {
         let foundPosts = [];
         let allLikes = [];
-        let allComments = [];
         if (req.query.q) {
             const query = { $text: { $search: `${req.query.q}` } };
             foundPosts = await Post.find(query);
@@ -21,9 +20,6 @@ router.get("/", async (req, res, next) => {
             foundPosts = await Post.find();
             allLikes = await Like.find();
         }
-        //console.log(allLikes);
-        allComments = await Comment.find();
-        //console.log(allComments);
         const context = {
             posts: foundPosts,
             searchTerm: req.query.q,

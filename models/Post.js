@@ -20,7 +20,11 @@ const postSchema = new mongoose.Schema(
         },
         tags:[{
             type: String,
-        }]
+        }],
+        numComments:{
+            type: Number,
+            min: 0,
+        }
     },
     {
         timestamps: true,
