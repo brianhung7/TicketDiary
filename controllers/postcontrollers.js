@@ -52,7 +52,7 @@ router.post("/", async (req, res, next) => {
     try {
         req.body.user = req.session.currentUser.id;
         const newPost = await Post.create(req.body);
-        console.log("new post MADE", newPost);
+        const newLike = await Like.create({post:newPost._id});
         return res.redirect(`/gallery/${newPost.id}`);
     } catch (error) {
         const context = {
@@ -74,6 +74,7 @@ router.get("/:id", async (req, res, next) => {
             comments: allComments,
             likes: foundLikes,
         }
+        
         return res.render("posts/show", context);
     } catch (error) {
         console.log(error);

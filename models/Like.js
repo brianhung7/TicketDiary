@@ -7,6 +7,7 @@ const likeSchema = new mongoose.Schema(
         numLikes: {
             type: Number,
             min: 0,
+            default:0,
         },
         post: {
             type: mongoose.Types.ObjectId,
