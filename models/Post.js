@@ -23,7 +23,7 @@ const postSchema = new mongoose.Schema(
         timestamps: true,
     }
 );
-
+postSchema.index({'$**': 'text'});
 const Post = mongoose.model("Post", postSchema);
 
 module.exports = Post;

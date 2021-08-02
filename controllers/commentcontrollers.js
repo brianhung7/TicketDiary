@@ -39,7 +39,12 @@ const Comment = require("../models/Comment");
 // "/" - POST - functional
 
 router.post("/", (req, res) => {
-    req.body.user = req.session.currentUser.id;
+    //If user is logged in, use their id, otherwise use anonymous user
+    if (req.session.currentUser) {
+        req.body.user = req.session.currentUser.id;
+    } else {
+        req.body.user = "120569a838391314d541f1fd";
+    }
     Comment.create(req.body, (error, createdComment) => {
         if (error) {
             console.log(error);
@@ -51,23 +56,24 @@ router.post("/", (req, res) => {
 });
 
 
-// remove review 
+// remove comment
 
-// router.delete("/:id", async (req, res) => {
-//     try {
-//         const foundReview = await Review.findById(req.params.id);
-//         if (foundReview.user == req.session.currentUser.id) {
-//             await foundReview.delete();
-//             return res.redirect("/gallery");
-//         } else {
-//             return res.send("You are not allowed");
-//         }
-
-//     } catch (error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//     }
-// })
+router.delete("/:id", async (req, res, next) => {
+    try {
+        const foundComment = await Comment.findById(req.params.id);
+        postId = foundComment.post;
+        if (foundComment.user == req.session.currentUser.id) {
+            await foundComment.delete();
+            return res.redirect(`/gallery/${postId}`);
+        } else {
+            return res.send("You are not allowed");
+        }
+        
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 module.exports = router;

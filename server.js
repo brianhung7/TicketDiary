@@ -20,6 +20,7 @@ const postCtrl = require("./controllers/postcontrollers.js");
 const commentCtrl = require("./controllers/commentcontrollers.js");
 const authCtrl = require("./controllers/auth_controller");
 const usersCtrl = require("./controllers/usercontroller");
+const likesCtrl = require("./controllers/likecontroller");
 
 /* SECTION App Config */
 
@@ -80,14 +81,13 @@ app.use(express.static("public"));
 
 
 /* !SECTION */
-// app.get("/", (req, res) => res.redirect("/products"));
-
 
 // /* SECTION Routes */
  app.use("/", authCtrl);
 app.use("/gallery", postCtrl);
 app.use("/comments", commentCtrl);
 app.use("/users", usersCtrl);
+app.use("/likes", likesCtrl);
 
 // 404
 app.get("/*", (req, res) => {

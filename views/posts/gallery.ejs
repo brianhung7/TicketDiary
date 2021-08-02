@@ -4,6 +4,10 @@
 <body>
   <%- include('../partials/_navbar',{routes}) %> 
     <main class="container__gallery">
+      <% if (searchTerm){ %>
+      <div  class="search__message">Showing results for <%= searchTerm %> </div>
+      <% } %> 
+
         <div class="columns">
           <% for(let idx = 0; idx < posts.length; idx++){ %> <% const post =
           posts[idx] %>
