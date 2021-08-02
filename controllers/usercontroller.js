@@ -4,6 +4,7 @@ const Post = require("../models/Post");
 const User = require("../models/User");
 const Like = require("../models/Like");
 
+//User profile route
 router.get("/:id", async (req, res, next) => {
     try {
         const userPosts = await Post.find({ user: req.params.id });
@@ -21,6 +22,7 @@ router.get("/:id", async (req, res, next) => {
     }
 });
 
+//User Favorites Route
 router.get("/:id/favorites", async (req, res, next) => {
     try {
         const likedPosts = await Like.find({ userArr: req.params.id });
