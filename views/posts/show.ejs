@@ -23,6 +23,8 @@
         </div>
         <div>Likes: <%= likes.numLikes %>
         </div>
+        <div>Tags: <%= post.tags %>
+        </div>
         <div class="comment_form">
             <form action="../comments" method="POST">
                 <input class="input" type="text" name="content" placeholder="Leave a comment!" required/>
@@ -55,9 +57,11 @@
                 <input class="button" type="submit" value="Delete Post" />
             </form>
             <% } %>
+            <% if ( typeof user !=='undefined' && post.user._id==user.id) { %>
             <form action="/likes/<%= post.id %>?_method=PUT" method="POST">
                 <input class="button" type="submit" value="Like Post" />
             </form>
+            <% } %>
 </body>
 
 </html>

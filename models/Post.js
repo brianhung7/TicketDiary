@@ -18,6 +18,13 @@ const postSchema = new mongoose.Schema(
         description: {
             type: String,
         },
+        tags:[{
+            type: String,
+        }],
+        numComments:{
+            type: Number,
+            min: 0,
+        }
     },
     {
         timestamps: true,
