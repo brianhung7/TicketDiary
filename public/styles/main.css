@@ -1,12 +1,12 @@
-.navbar.is-fixed-top{
+/* .navbar.is-fixed-top{
     display: flex;
     justify-content: space-between;
     font-size: 24px;
-    background-color: darkgrey;
-}
+    /* background-color: darkgrey; */
+/* } */
 
 
-#td__logo{
+/* #td__logo{
     width: 40px;
 }
 .columns{
@@ -14,4 +14,4 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
 
 }
-
+ /* */ 
