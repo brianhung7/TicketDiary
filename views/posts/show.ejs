@@ -55,9 +55,11 @@
                 <input class="button" type="submit" value="Delete Post" />
             </form>
             <% } %>
+            <% if ( typeof user !=='undefined' && post.user._id==user.id) { %>
             <form action="/likes/<%= post.id %>?_method=PUT" method="POST">
                 <input class="button" type="submit" value="Like Post" />
             </form>
+            <% } %>
 </body>
 
 </html>
