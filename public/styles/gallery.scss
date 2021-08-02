@@ -9,6 +9,26 @@ $open-sans: 'Open Sans',
 sans-serif;
 
 // clear-fix mixin
+.navbar.is-fixed-top{
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  background-color: $movie-blue;
+  color: $movie-red;
+}
+#td__logo{
+  width: 40px;
+}
+.columns{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  
+}
+.content{
+  background-color: $black;
+}
+
 @mixin cf {
   &::before,
   &::after {
@@ -20,16 +40,15 @@ sans-serif;
   }
 }
 
-* {
-  box-sizing: border-box;
-}
+// * {
+//   box-sizing: border-box;
+// }
 
 body {
-  background-image: linear-gradient(to right, $movie-blue, $san-juan);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: $movie-blue;
   height: 100vh;
   font-family: $open-sans;
+  
 }
 
 a {
@@ -47,10 +66,12 @@ h1 {
 }
 
 // Base styles
+
 .card {
+  
   float: left;
   padding: 0 1.7rem;
-  width: 50%;
+  width: 100%;
   .menu-content {
     @include cf;
     margin: 0;
@@ -74,15 +95,26 @@ h1 {
   }
   .wrapper {
     background-color: $movie-red;
+    border:solid 1px;
+    
+   
+    border-radius: 3%;
     min-height: 540px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
     &:hover {
+      
       .data {
         transform: translateY(0);
+       
+      }
+      .content{
+        background-color: $black;
+        filter:blur(0px);
       }
     }
+
   }
   .data {
     position: absolute;
@@ -114,6 +146,7 @@ h1 {
   }
 }
 .card {
+ 
     .wrapper {
       background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat;
       &:hover {
@@ -125,20 +158,12 @@ h1 {
         }
         
         
-        .blur{
-          filter:blur(8px);
-        }
-        
       }
     }
     .header {
       @include cf;
       color: $movie-red;
       padding: 1em;
-      .date {
-        float: left;
-        font-size: 12px;
-      }
     }
     .menu-content {
       float: right;
@@ -152,13 +177,13 @@ h1 {
       }
     }
     .data {
-      color: $movie-red;
+      color: white;
       transform: translateY(calc(70px + 4em));
      
     }
     .title {
       a {
-        color: $movie-red;
+        color:$movie-red
       }
     }
     .button {
@@ -184,6 +209,7 @@ h1 {
         &::after {
           transform: translate(5px, -50%);
           opacity: 1;
+          
         }
       }
     }
