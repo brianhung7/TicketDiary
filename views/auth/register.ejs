@@ -2,10 +2,13 @@
 <html lang="en">
 
 <%- include('../partials/_head') %>
+<link rel="stylesheet" href="/styles/form.css">
 
     <body>
         <%- include('../partials/_navbar') %>
-        <form action="/register" method="POST">
+        <div class="form__container">
+            <h1 class="form__name">Edit Post</h1>
+        <form action="/register" method="POST" id="form__box">
             <% if (typeof error !=='undefined' ) { %>
                 <article class="message is-danger">
                     <div class="message-header">
@@ -38,5 +41,6 @@
                     </div>
                 </fieldset>
         </form>
+        </div>
 
     </body>

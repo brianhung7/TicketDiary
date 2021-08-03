@@ -2,10 +2,13 @@
 <html lang="en">
 
 <%- include('../partials/_head') %>
+<link rel="stylesheet" href="/styles/form.css">
 
     <body>
         <%- include('../partials/_navbar') %>
-        <form action="/login" method="POST">
+        <div class="form__container">
+            <h1 class="form__name">Edit Post</h1>
+        <form action="/login" method="POST" id="form__box">
             <% if (typeof error !=='undefined' ) { %>
                 <article class="message is-danger">
                     <div class="message-header">
@@ -18,10 +21,10 @@
                 <% } %>
                 <legend>Login</legend>
                 <fieldset>
-                    <div class="new__post__image">
+                    <div class="form__input">
                         <input type="email" class="input" placeholder="Email" name="email" >
                     </div>
-                    <div class="new__post__description">
+                    <div class="form__input">
                         <input type="password" class="input" placeholder="Password" name="password" >
                     </div>
 
@@ -30,5 +33,6 @@
                     </div>
                 </fieldset>
         </form>
+    </div>
 
     </body>
