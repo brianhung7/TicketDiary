@@ -39,6 +39,7 @@
             <div class="comments">
                 <% comments.forEach(comment=> { %>
                     <div class="comment">
+                        <img src="<%= comment.user.avatar %>" alt="" srcset="">
                         <%= comment.user.username %> Says <%= comment.content %>
                                 <% if ( typeof user !=='undefined' && comment.user._id==user.id) { %>
                                     <form action="../comments/<%=comment.id%>?_method=DELETE" method="POST">

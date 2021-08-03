@@ -13,7 +13,6 @@ router.get("/:id", async (req, res, next) => {
             posts: userPosts,
             userProfile: foundUser,
         };
-        //console.log(context);
         res.render("users/profile", context);
     } catch (error) {
         console.log(error);

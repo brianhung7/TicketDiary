@@ -17,14 +17,14 @@
                 </div>
             </div>
             <div class="profile__links">
-                <a href="./">
+                <a href="/users/<%= userProfile._id %>">
                     <div class="profile__link">
-                        <%= userProfile.username %>'s Movie Posts
+                        View Movie Posts
                     </div>
                 </a>
-                <a href="./favorites">
+                <a href="/users/<%= userProfile._id %>/favorites">
                     <div class="profile__link">
-                        <%= userProfile.username %>'s Favorites
+                        View Favorites
                     </div>
                 </a>
             </div>
@@ -62,7 +62,7 @@
                                                     </a></h1>
                                                 <p class="text">
                                                     <%= post.description %>
-                                                        COMMENTS <%=post.numComments%>
+                                                        
                                                 </p>
                                                 <a href="/gallery/<%= post.id %>" class="button">Read more</a>
                                             </div>

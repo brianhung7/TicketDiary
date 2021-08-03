@@ -49,7 +49,8 @@ usernameArr = ["BrianPham", "ArnavSingh", "WilliamSmith15", "Jerry59", "MovieGuy
 userIdArr = ['220569a838391314d541f1fd', '230569a838391314d541f1fd', '240569a838391314d541f1fd', '250569a838391314d541f1fd', '260569a838391314d541f1fd'];
 bioArr = ["I spend most of my time watching movies, so much that I sometimes start making films in my head.",
     "I love movies so much I sometimes don't know the boundary between imagination and reality.",
-    "Lover of film, I live to enrich myself and learn through film, they are art and I am the curator."]
+    "Lover of film, I live to enrich myself and learn through film, they are art and I am the curator.",
+"I can't believe there is a website like this that caters to movie lovers like myself, this is awesome!"]
 avatarArr = ["/resources/avatar.png","/resources/dragon.png","/resources/panda.png"]
 const seedUsers = async () => {
     await User.deleteMany();
