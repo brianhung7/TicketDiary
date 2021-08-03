@@ -103,4 +103,8 @@ body {
   clear: both;
 }
 
+button:hover{
+    transform: scale(1.1);
+    transition:300ms ease-in-out;
+}
 /* End Landing Page */

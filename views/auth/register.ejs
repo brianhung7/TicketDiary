@@ -22,25 +22,43 @@
                             <div class="form__input">
                                 <label for="username">Username</label><br />
                                 <input type="text" class="input" placeholder="MovieGuy" name="username" maxlength="30"
-                                    id="username">
+                                    id="username" required>
                             </div>
                             <div class="form__input">
                                 <label for="email">Email Address</label><br />
-                                <input type="email" class="input" placeholder="MovieGuy@gmail.com" name="email" id="email">
+                                <input type="email" class="input" placeholder="MovieGuy@gmail.com" name="email" id="email" required>
                             </div>
                             <div class="form__input">
                                 <label for="password">Password</label><br />
-                                <input type="password" class="input" placeholder="******" name="password" id="password">
+                                <input type="password" class="input" placeholder="******" name="password" id="password" required>
                             </div>
                             <div class="form__input">
                                 <label for="biography">Profile Biography</label><br />
                                 <input type="text" class="input" placeholder="I love watching movies!" name="biography"
                                     maxlength="300" id="biography">
                             </div>
-                            <div class="form__input">
-                                <label for="avatar">Avatar</label><br />
-                                <input type="text" class="input" placeholder="Avatar" name="avatar" id="avatar">
-                            </div>
+
+                            <div class="avatar__container"> 
+                                <span class="radio">
+                                <input type="radio" id="radio1" name="avatar">
+                                <label for="radio1">
+                                  <div>Avat1</div>
+                                </label>
+                                </span>
+                                <span class="radio">
+                                  <input type="radio" id="radio2" name="avatar">
+                                  <label for="radio2">
+                                    <div>Avat2</div>
+                                  </label>
+                                </span>
+                                <span class="radio">
+                                  <input type="radio" id="radio3" name="avatar">
+                                  <label for="radio3">
+                                    <div>Avat3</div>
+                                  </label>
+                                </span>
+                              </div>
+                              
                             <div>
                                 <button class="form__button">Sign Up</button>
                             </div>
