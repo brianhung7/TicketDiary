@@ -3,7 +3,7 @@
     justify-content: space-between;
     font-size: 22px;
     background-color: #18222c;
-    
+    padding-bottom: 30px;
 }
 
 #td__logo{
@@ -14,28 +14,22 @@
 }
 .navbar a:hover {
     background-color: #ff5757;
-    border: solid 0.5px;
     border-radius: 25%;
   } 
 
-
-/* #nav {
-    width: 300px;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: black;
-  } */
-/*   
-  a {
-    width: 100px;
-    background-color: rgba(0,0,0,1);
-    float: left;
-    height: 50px;
-    text-align: center;
-    font-family: helvetica;
-    color: white;
-    list-style: none
-   }
-  
  
+.input{
+    width: 500px;
+  height: 45px;
+  border-radius: 30px;
+  outline: none;
+  padding-left: 15px;
+  background: #fff;
+  border: 2px solid #013243;
+  color: #888; 
+}
+
+#search__button{
+    color: red;
+}
+  
