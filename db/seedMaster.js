@@ -50,7 +50,7 @@ userIdArr = ['220569a838391314d541f1fd', '230569a838391314d541f1fd', '240569a838
 bioArr = ["I spend most of my time watching movies, so much that I sometimes start making films in my head.",
     "I love movies so much I sometimes don't know the boundary between imagination and reality.",
     "Lover of film, I live to enrich myself and learn through film, they are art and I am the curator."]
-avatarArr = ["/resources/avatar.svg","/resources/dragon.svg","/resources/panda.svg"]
+avatarArr = ["/resources/avatar.png","/resources/dragon.png","/resources/panda.png"]
 const seedUsers = async () => {
     await User.deleteMany();
     await User.insertMany([

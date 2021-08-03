@@ -58,6 +58,7 @@ body{
   }
 
   .avatar__img{
-      max-width: 150px;
-      object-fit: cover;
+      width: 100px;
+      height: 95px;
   }
+  
