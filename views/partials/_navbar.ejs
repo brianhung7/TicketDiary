@@ -1,23 +1,22 @@
 <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="/gallery">
-            <img src="styles/logo.svg" id="td__logo" />
-            Gallery
-        </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
+
+        <img src="/styles/logo.svg" id="td__logo" />
+
+
+
+
+
     </div>
     <form action="/gallery">
         <div class="searchbar">
-            <input class="input" type="search" placeholder="Search" name="q">
-            <input type="submit" class="button" id="search__button" value="Search">
+            <input class="input" type="search" placeholder="Find a post" name="q">
+            <input type="submit" class="button fa-heart-o" id="search__button" value="Search">
         </div>
     </form>
     <!-- this will add a link to the new route -->
     <div class="navbar-menu navbar-end">
+        <a class="navbar navbar-item" href="/gallery"> Gallery</a>
         <% if (typeof user !=='undefined' ) { %>
 
             <a href="/users/<%= user.id %>">
