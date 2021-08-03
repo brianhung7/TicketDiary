@@ -60,5 +60,6 @@ body{
   .avatar__img{
       width: 100px;
       height: 95px;
+      padding: 0px 5px 0px 5px;
   }
   

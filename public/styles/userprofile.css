@@ -27,6 +27,41 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.profile__links {
+    display:flex;
+    justify-content: center;
+}
+
+.profile__link{
+    padding: 15px;
+    background-color: beige;
+    border: 5px blue solid;
+    border-radius: 10px;
+    margin: 15px;
+    font-size: 24px;
+}
+
+.profile__link:hover{
+        transform: scale(1.1);
+        transition:300ms ease-in-out;
+}
+
+.avatar__image{
+    background-color: beige;
+    border-radius: 50%;
+    border: black 5px solid;
+}
+
+.user__info__container{
+    display: flex;
+    justify-content: center;
+}
+
+.name__bio{
+    padding: 25px;
+    font-size: 24px;
+    color: bisque;
+}
 a {
   text-decoration: none;
 }
@@ -36,6 +71,10 @@ h1 {
   font-weight: 300;
 }
 
+.avatar__image{
+    width: 100px;
+    height: 100px;
+}
 .row {
   max-width: 900px;
   margin: 50px auto 0;
