@@ -45,7 +45,7 @@ const posterArr = [
     { img: "https://i.imgur.com/6FsjOkQ.png", title: "Futurama" },
 ]
 
-usernameArr = ["Brian44", "Arnav45", "Pham94", "Singh55", "MovieGuy33"];
+usernameArr = ["BrianPham", "ArnavSingh", "WilliamSmith15", "Jerry59", "MovieGuy33"];
 userIdArr = ['220569a838391314d541f1fd', '230569a838391314d541f1fd', '240569a838391314d541f1fd', '250569a838391314d541f1fd', '260569a838391314d541f1fd'];
 bioArr = ["I spend most of my time watching movies, so much that I sometimes start making films in my head.",
     "I love movies so much I sometimes don't know the boundary between imagination and reality.",

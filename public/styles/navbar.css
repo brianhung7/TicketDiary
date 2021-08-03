@@ -1,10 +1,41 @@
 .navbar.is-fixed-top{
     display: flex;
     justify-content: space-between;
-    font-size: 30px;
+    font-size: 22px;
     background-color: #18222c;
+    
 }
 
 #td__logo{
     width: 40px;
 }
+.navbar a{
+   padding: 20px;
+}
+.navbar a:hover {
+    background-color: #ff5757;
+    border: solid 0.5px;
+    border-radius: 25%;
+  } 
+
+
+/* #nav {
+    width: 300px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+  } */
+/*   
+  a {
+    width: 100px;
+    background-color: rgba(0,0,0,1);
+    float: left;
+    height: 50px;
+    text-align: center;
+    font-family: helvetica;
+    color: white;
+    list-style: none
+   }
+  
+ 

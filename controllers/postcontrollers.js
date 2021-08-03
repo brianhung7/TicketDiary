@@ -11,13 +11,13 @@ router.get("/", async (req, res, next) => {
         let allLikes = [];
         if (req.query.q) {
             const query = { $text: { $search: `${req.query.q}` } };
-            foundPosts = await Post.find(query);
+            foundPosts = await Post.find(query).populate("user");
             for (let i = 0; i < foundPosts.length; i++) {
                 let foundLike = await Like.findOne({ post: `${foundPosts[i]._id}` });
                 allLikes.push(foundLike);
             }
         } else {
-            foundPosts = await Post.find();
+            foundPosts = await Post.find().populate("user");
             allLikes = await Like.find();
         }
         const context = {
