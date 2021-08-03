@@ -19,23 +19,27 @@
                         </article>
                         <% } %>
                             <div class="form__input">
-                                <input type="text" class="input" placeholder="Post title" name="title"
+                                <label for="title">Post Title</label><br/>
+                                <input type="text" class="input" placeholder="Post title" name="title" id="title" maxlength="30"
                                     value="<%= post.title %>">
                             </div>
                             <div class="form__input">
-                                <input type="text" class="input" placeholder="URL" name="image"
+                                <label for="image">Image Link</label><br/>
+                                <input type="text" class="input" placeholder="URL" name="image"id="image"
                                     value="<%= post.image %>" required>
                             </div>
                             <div class="form__input">
-                                <input type="text" class="input" placeholder="Description" name="description"
+                                <label for="description">Description</label><br/>
+                                <input type="text" class="input" placeholder="Description" name="description" id="description" maxlength="300"
                                     value="<%= post.description%> ">
                             </div>
                             <div class="form__input">
-                                <input type="text" class="input" placeholder="Tags" name="tags"
+                                <label for="tags">Tags</label><br/>
+                                <input type="text" class="input" placeholder="Tags" name="tags" id="tags"
                                     value="<%= post.tags%> ">
                             </div>
                             <div>
-                                <button class="button ">Submit Updated Post</button>
+                                <button class="form__button">Submit Updated Post</button>
                             </div>
                 </form>
             </div>

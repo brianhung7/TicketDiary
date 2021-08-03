@@ -20,19 +20,23 @@
                         </article>
                         <% } %>
                             <div class="form__input">
-                                <input type="text" class="input" placeholder="Post title" name="title">
+                                <label for="title">Post Title</label><br/>
+                                <input maxlength="30" type="text" class="input" placeholder="Post title" name="title" id="title">
                             </div>
                             <div class="form__input">
-                                <input type="text" class="input" placeholder="Image URL" name="image">
+                                <label for="image">Image Link</label><br/>
+                                <input type="text" class="input" placeholder="Image URL" name="image" id="image">
                             </div>
                             <div class="form__input">
-                                <input type="text" class="input" placeholder="Description" name="description">
+                                <label for="description">Post Description</label><br/>
+                                <input maxlength="300" type="text" class="input" placeholder="Description" name="description" id="description">  
                             </div>
                             <div class="form__input">
-                                <input type="text" class="input" placeholder="Tags" name="tags">
+                                <label for="Tags">Tags</label><br/>
+                                <input type="text" class="input" placeholder="Tags" name="tags" id="tags">
                             </div>
                             <div>
-                                <button class="button ">Submit New Post</button>
+                                <button class="form__button">Submit New Post</button>
                             </div>
 
                 </form>

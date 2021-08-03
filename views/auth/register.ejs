@@ -2,45 +2,49 @@
 <html lang="en">
 
 <%- include('../partials/_head') %>
-<link rel="stylesheet" href="/styles/form.css">
+    <link rel="stylesheet" href="/styles/form.css">
 
     <body>
         <%- include('../partials/_navbar') %>
-        <div class="form__container">
-            <h1 class="form__name">Edit Post</h1>
-        <form action="/register" method="POST" id="form__box">
-            <% if (typeof error !=='undefined' ) { %>
-                <article class="message is-danger">
-                    <div class="message-header">
-                        <p>Danger</p>
-                    </div>
-                    <div class="message-body">
-                        <%= error.message %>
-                    </div>
-                </article>
-                <% } %>
-                <legend>Register</legend>
-                <fieldset>
-                    <div class="new__post__title">
-                        <input type="text" class="input" placeholder="Username" name="username" >
-                    </div>
-                    <div class="new__post__image">
-                        <input type="email" class="input" placeholder="Email" name="email" >
-                    </div>
-                    <div class="new__post__description">
-                        <input type="password" class="input" placeholder="Password" name="password" >
-                    </div>
-                    <div class="new__post__description">
-                        <input type="text" class="input" placeholder="Biography" name="biography" >
-                    </div>
-                    <div class="new__post__description">
-                        <input type="text" class="input" placeholder="Avatar" name="avatar" >
-                    </div>
-                    <div>
-                        <button class="button ">Sign Up</button>
-                    </div>
-                </fieldset>
-        </form>
-        </div>
+            <div class="form__container">
+                <h1 class="form__name">Register</h1>
+                <form action="/register" method="POST" id="form__box">
+                    <% if (typeof error !=='undefined' ) { %>
+                        <article class="message is-danger">
+                            <div class="message-header">
+                                <p>Danger</p>
+                            </div>
+                            <div class="message-body">
+                                <%= error.message %>
+                            </div>
+                        </article>
+                        <% } %>
+                            <div class="form__input">
+                                <label for="username">Username</label><br />
+                                <input type="text" class="input" placeholder="MovieGuy" name="username" maxlength="30"
+                                    id="username">
+                            </div>
+                            <div class="form__input">
+                                <label for="email">Email Address</label><br />
+                                <input type="email" class="input" placeholder="MovieGuy@gmail.com" name="email" id="email">
+                            </div>
+                            <div class="form__input">
+                                <label for="password">Password</label><br />
+                                <input type="password" class="input" placeholder="******" name="password" id="password">
+                            </div>
+                            <div class="form__input">
+                                <label for="biography">Profile Biography</label><br />
+                                <input type="text" class="input" placeholder="I love watching movies!" name="biography"
+                                    maxlength="300" id="biography">
+                            </div>
+                            <div class="form__input">
+                                <label for="avatar">Avatar</label><br />
+                                <input type="text" class="input" placeholder="Avatar" name="avatar" id="avatar">
+                            </div>
+                            <div>
+                                <button class="form__button">Sign Up</button>
+                            </div>
+                </form>
+            </div>
 
     </body>

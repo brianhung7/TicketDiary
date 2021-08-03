@@ -10,11 +10,18 @@ h1{
 }
 #form__box{
     border-radius: 10px;
-    padding: 15px;
+    padding: 15px 35px 25px 35px;
     background-color: seashell;
-    text-align: center;
 }
 
 body{
     background-color: #18222c;
+}
+
+.form__input{
+    margin: 10px 0px 10px 0px;
+}
+
+.form__button{
+    justify-content: center;
 }
