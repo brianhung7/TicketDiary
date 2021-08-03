@@ -6,10 +6,12 @@
     <main class="container__gallery__user">
       <div> Username: <%= userProfile.username %> </div>
       <div> Biography <%= userProfile.biography %> </div>
+      <div> Avatar <img src="<%= userProfile.avatar %>" alt="" srcset=""> </div>
       <a href="/users/<%= userProfile._id %>">User's Movie Posts</a>
       <div>
       <a href="/users/<%= userProfile._id %>/favorites">Favorites</a>
       </div>
+      
         <div class="columns">
           <% for(let idx = 0; idx < posts.length; idx++){ %> <% const post =
           posts[idx] %>

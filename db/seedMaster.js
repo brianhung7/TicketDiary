@@ -50,7 +50,7 @@ userIdArr = ['220569a838391314d541f1fd', '230569a838391314d541f1fd', '240569a838
 bioArr = ["I spend most of my time watching movies, so much that I sometimes start making films in my head.",
     "I love movies so much I sometimes don't know the boundary between imagination and reality.",
     "Lover of film, I live to enrich myself and learn through film, they are art and I am the curator."]
-
+avatarArr = ["/resources/avatar.svg","/resources/dragon.svg","/resources/panda.svg"]
 const seedUsers = async () => {
     await User.deleteMany();
     await User.insertMany([
@@ -58,7 +58,7 @@ const seedUsers = async () => {
             username: "Anonymous",
             email: `anonymous@yahoo.com`,
             password: 'sdf',
-            avatar: 'lajsf',
+            avatar: "/resources/avatar.svg",
             biography: "We are those who haven't logged in",
             _id: ObjectId('120569a838391314d541f1fd'),
 
@@ -75,7 +75,7 @@ const seedUsers = async () => {
                 username: usernameArr[i],
                 email: `${usernameArr[i]}@yahoo.com`,
                 password: 'sdf',
-                avatar: 'lajsf',
+                avatar: avatarArr[Math.floor(Math.random() * (avatarArr.length - 1))],
                 biography: bioArr[Math.floor(Math.random() * (bioArr.length - 1))],
                 _id: ObjectId(userIdArr[i]),
 
