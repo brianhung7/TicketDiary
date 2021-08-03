@@ -22,26 +22,28 @@
 
                         <div class="header">
                           <ul class="menu-content">
-                            <li>
+                            <!-- <li>
                               <a href="#" class="fa fa-bookmark-o"></a>
-                            </li>
-                            <li><a href="#" class="fa fa-heart-o"><span>
+                            </li> -->
+                            <li><a href="#" class="fas fa-heart"><span>
                                   <%=likes[idx].numLikes%>
                                 </span></a></li>
-                            <li><a href="#" class="fa fa-comment-o"><span>
+                            <li><a href="#" class="fas fa-comment"><span>
                                   <%=post.numComments%>
                                 </span></a></li>
                           </ul>
                         </div>
                         <div class="data">
                           <div class="content">
-                            <span class="author"><%= post.user.username %></span>
+                            <span class="author">
+                              <%= post.user.username %>
+                            </span>
                             <h1 class="title"><a href="/gallery/<%= post.id %>">
                                 <%= post.title %>
                               </a></h1>
                             <p class="text">
                               <%= post.description %>
-                              COMMENTS <%=post.numComments%>
+                                COMMENTS <%=post.numComments%>
                             </p>
                             <a href="/gallery/<%= post.id %>" class="button">Read more</a>
                           </div>

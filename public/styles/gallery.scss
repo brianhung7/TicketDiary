@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 // Variable
 $movie-blue: #18222c;
@@ -9,14 +9,7 @@ $black: #000;
 $font: 'Inconsolata', monospace;
 
 
-// clear-fix mixin
-// .navbar.is-fixed-top{
-//   display: flex;
-//   justify-content: space-between;
-//   font-size: 24px;
-//   // background-color: $movie-blue;
-//   color: $movie-red;
-// }
+
 
 .columns{
   display: grid;
@@ -88,7 +81,7 @@ h1 {
       top: 0;
       font-size: 10px;
       font-weight: 700;
-      font-family: 'Open Sans';
+      font-family: $font;
       transform: translate(-50%, 0);
     }
   }
@@ -151,7 +144,7 @@ h1 {
       &:hover {
         .menu-content {
           span {
-            transform: translate(-50%, -10px);
+            transform: translate(-40%, -10px);
             opacity: 1;
           }
         }
@@ -165,7 +158,9 @@ h1 {
       padding: 1em;
     }
     .menu-content {
-      float: right;
+    
+      float: center;
+      font-size: 12px;
       li {
         margin: 0 5px;
         position: relative;

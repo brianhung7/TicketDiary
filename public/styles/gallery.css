@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap");
 .columns {
   display: grid;
@@ -60,7 +60,7 @@ h1 {
   top: 0;
   font-size: 10px;
   font-weight: 700;
-  font-family: "Open Sans";
+  font-family: "Inconsolata", monospace;
   transform: translate(-50%, 0);
 }
 .card .wrapper {
@@ -112,7 +112,7 @@ h1 {
   background: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmir-s3-cdn-cf.behance.net%2Fproject_modules%2F1400%2F28c41e84297143.5d585429eeba4.jpg&f=1&nofb=1) center/cover no-repeat;
 }
 .card .wrapper:hover .menu-content span {
-  transform: translate(-50%, -10px);
+  transform: translate(-40%, -10px);
   opacity: 1;
 }
 .card .header {
@@ -127,7 +127,8 @@ h1 {
   clear: both;
 }
 .card .menu-content {
-  float: right;
+  float: center;
+  font-size: 12px;
 }
 .card .menu-content li {
   margin: 0 5px;

@@ -3,33 +3,42 @@
     justify-content: space-between;
     font-size: 22px;
     background-color: #18222c;
-    padding-bottom: 30px;
+    padding: 15px;
 }
 
 #td__logo{
     width: 40px;
 }
 .navbar a{
+    color: #ff5757;
    padding: 20px;
 }
 .navbar a:hover {
-    background-color: #ff5757;
-    border-radius: 25%;
+    
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+    transition: width 2s;
   } 
 
  
 .input{
-    width: 500px;
+    width: 300px;
   height: 45px;
   border-radius: 30px;
   outline: none;
   padding-left: 15px;
-  background: #fff;
+  background: #000000; 
   border: 2px solid #013243;
-  color: #888; 
+  color: rgb(255, 255, 255); 
 }
 
 #search__button{
-    color: red;
+    font-family:'Inconsolata', monospace ;
+    text-align: center;
+    background-color: black;
+    color:#ff5757; ;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 20%;
 }
   
