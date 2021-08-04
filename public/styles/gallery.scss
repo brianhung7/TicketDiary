@@ -4,7 +4,6 @@
 $movie-blue: #18222c;
 $san-juan: #2d4e68;
 $bermuda: #77d7b9;
-$movie-red: #ff5757;
 $black: #000;
 $font: 'Inconsolata', monospace;
 
@@ -62,7 +61,7 @@ h1 {
 .card {
   
   float: left;
-  padding: 0 1.7rem;
+  padding: 0;
   width: 100%;
   .menu-content {
     @include cf;

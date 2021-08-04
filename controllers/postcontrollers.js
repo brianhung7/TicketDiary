@@ -83,30 +83,6 @@ router.get("/:id", async (req, res, next) => {
     }
 });
 
-// router.get("/:id", (req, res) => {
-//     Comment.find({post:req.params.id})
-//       .populate("post user")
-//       .exec((error, allComments) => {
-//         if (error) {
-//           console.log(error);
-//           req.error = error;
-//           return next();
-//         }
-//         Post.findById(req.params.id).populate("user").exec((error, foundPost) => {
-//           if (error) {
-//             console.log(error);
-//             req.error = error;
-//             return next();
-//           }
-//           const context = {
-//             post:foundPost,
-//             comments:allComments,
-//           };
-//           return res.render("posts/show", context);
-//         });
-//       });
-//   });
-
 //update route
 router.get("/:id/edit", async (req, res, next) => {
     try {
@@ -117,7 +93,6 @@ router.get("/:id/edit", async (req, res, next) => {
             };
             return res.render("404", context);
         }
-        //const allComments = await Review.find({post: req.params.id});
         const context = {
             post: foundPost,
         }
@@ -145,7 +120,6 @@ router.put("/:id", (req, res, next) => {
                 req.error = error;
                 return next();
             }
-            //console.log("Success update", updatedPost);
             return res.redirect(`/gallery/${updatedPost.id}`);
         }
     );
@@ -164,15 +138,5 @@ router.delete("/:id", async (req, res, next) => {
         return next();
     }
 });
-/*
-router.like("/:id", async (req,res,next)=>{
-    try{
-        console.log("liked");
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-})
-*/
+
 module.exports = router;

@@ -1,3 +1,33 @@
-.comments{
-    color: yellowgreen;
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+$movie-blue: #18222c;
+$movie-red: #ff5757;
+$movie-white: rgb(255, 196, 196);
+
+body{
+    background-color: $movie-blue;
+}
+
+.bigContainer{
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+   
+}
+
+.container1{
+    box-shadow: 0 10px 20px
+    $movie-red,
+     0 6px 6px $movie-red;
+     border-radius: 10%;
+     &:hover{
+        box-shadow: 0 14px 28px $movie-red, 0 10px 10px $movie-red;
+     }
+}
+.poster_show{
+    border-radius: 10%;
+}
+
+.container2{
+    padding-left: 70px;
 }

@@ -25,7 +25,6 @@ router.post("/register", async (req, res) => {
             console.log("user exists already");
             return res.redirect("/login");
         }
-        //console.log("register body info", req.body);
         //encryption
         const salt = await bcrypt.genSalt(10);
 

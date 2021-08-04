@@ -6,7 +6,7 @@
     color: #18222c;
 }
 h1{
-    margin-top: 12vh;
+    margin-top: 8vh;
     color: seashell;
 }
 #form__box{
@@ -26,7 +26,7 @@ body{
 }
 
 .form__button{
-    margin-top: 15px;
+    margin-top: 10px;
     justify-content: center;
     padding:10px 20px 10px 20px;
     border-radius: 15px;
@@ -56,3 +56,10 @@ body{
     display:flex;
     justify-content: space-between;
   }
+
+  .avatar__img{
+      width: 100px;
+      height: 95px;
+      padding: 0px 5px 0px 5px;
+  }
+  

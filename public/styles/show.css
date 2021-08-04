@@ -1,5 +1,28 @@
-.comments {
-  color: yellowgreen;
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap");
+body {
+  background-color: #18222c;
+}
+
+.bigContainer {
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+}
+
+.container1 {
+  box-shadow: 0 10px 20px #ff5757, 0 6px 6px #ff5757;
+  border-radius: 10%;
+}
+.container1:hover {
+  box-shadow: 0 14px 28px #ff5757, 0 10px 10px #ff5757;
+}
+
+.poster_show {
+  border-radius: 10%;
+}
+
+.container2 {
+  padding-left: 70px;
 }
 
 /*# sourceMappingURL=show.css.map */
