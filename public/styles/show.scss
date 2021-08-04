@@ -31,6 +31,7 @@ text-shadow:0;
     padding-top: 3px;
     margin: 5px;
     color: white;
+    line-height: 1.3em;
     
 }
 body{
@@ -84,7 +85,14 @@ body{
 }
 .red{
     color: $movie-red;
+    
 }
+
+.red a {
+    color: #ff5757;
+    text-decoration: none;
+  }
+
 .align{
     display: flex;
     text-align: center;
