@@ -24,7 +24,7 @@
 body {
   background-color: #18222c;
   height: 100vh;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Inconsolata', monospace;
 }
 
 .profile__links {
@@ -33,19 +33,31 @@ body {
 }
 
 .profile__link{
-    padding: 15px;
-    background-color: beige;
-    border: 5px #219ebc solid;
-    border-radius: 10px;
-    margin: 25px;
-    font-size: 24px;
+  font-family: 'Inconsolata', monospace;
+  outline:none;
+  height: 40px;
+  text-align: center;
+  width: 135px;
+  border-radius:40px;
+  background: black;
+  border: 2px solid #ff5757;
+  color:#ff5757;
+  letter-spacing:1px;
+  text-shadow:0;
+  margin-left: 10px;
+  margin-bottom: 30px;
 }
 
 .profile__link:hover{
         transform: scale(1.1);
-        transition:300ms ease-in-out;
+        background: #ff5757;
+        color:black;
+        transition:150ms ease-in-out;
+      
 }
-
+.image_style{
+  margin-top: 30px;
+}
 .avatar__image{
     background-color: beige;
     border-radius: 50%;
@@ -55,13 +67,13 @@ body {
 .user__info__container{
     display: flex;
     justify-content: center;
-    margin-top: 65px;
+    margin-top: 105px;
 }
 
 .name__bio{
     padding: 25px;
-    font-size: 24px;
-    color: bisque;
+    font-size: 25px;
+    color: white;
 }
 a {
   text-decoration: none;
