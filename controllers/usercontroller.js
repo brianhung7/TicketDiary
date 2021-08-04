@@ -63,7 +63,7 @@ router.get("/:id/edit", async (req, res, next) => {
         const context = {
             user: foundUser,
         }
-        console.log(context.user);
+        //console.log(context.user);
         return res.render("users/profileedit", context);
     } catch (error) {
         console.log(error);
@@ -73,6 +73,24 @@ router.get("/:id/edit", async (req, res, next) => {
 })
 
 //update put route
-
+router.put("/:id", (req, res, next) => {
+    User.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set: req.body,
+        },
+        {
+            new: true,
+        },
+        (error, updatedUser) => {
+            if (error) {
+                console.log(error);
+                req.error = error;
+                return next();
+            }
+            return res.redirect(`/users/${updatedUser.id}`);
+        }
+    );
+})
 module.exports = router;
 
