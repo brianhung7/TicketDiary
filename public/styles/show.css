@@ -1,5 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap");
+body {
+  background-color: #18222c;
+  font-family: "Inconsolata", monospace;
+  text-decoration: none;
+}
+
+.bigContainer {
+  margin-top: 20px;
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+}
+
+.container1 {
+  box-shadow: 0 10px 20px #ff5757, 0 6px 6px #ff5757;
+  border-radius: 10%;
+}
+.container1:hover {
+  box-shadow: 0 14px 28px #ff5757, 0 10px 10px #ff5757;
+}
+
+.poster_show {
+  border-radius: 10%;
+}
+
+.container2 {
+  padding-left: 70px;
+  margin: 30px;
+}
+
+.content {
+  background-color: black;
+  border-radius: 40px;
+  padding: 20px;
+  padding-top: 3px;
+  margin: 5px;
+  color: white;
+}
+
 .comments {
-  color: yellowgreen;
+  background-color: black;
+  border-radius: 40px;
+  padding: 20px;
+  padding-top: 3px;
+  margin: 5px;
+  color: white;
+}
+
+.red {
+  color: #ff5757;
+}
+
+.align {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.input {
+  font-family: "Inconsolata", monospace;
+  outline: none;
+  height: 40px;
+  text-align: center;
+  width: 100px;
+  border-radius: 40px;
+  background: black;
+  border: 2px solid #ff5757;
+  color: #ff5757;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  width: 30px;
+}
+
+.button {
+  font-family: "Inconsolata", monospace;
+  outline: none;
+  height: 40px;
+  text-align: center;
+  width: 100px;
+  border-radius: 40px;
+  background: black;
+  border: 2px solid #ff5757;
+  color: #ff5757;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+.button:hover {
+  background: #ff5757;
+  color: black;
 }
 
 /*# sourceMappingURL=show.css.map */

@@ -10,13 +10,23 @@
     width: 40px;
 }
 .navbar a{
-    color: #ff5757;
-   padding: 20px;
+font-family:'Inconsolata', monospace ;   
+font-size: 20px;
+outline:none;
+height: 60px;
+text-align: center;
+width: 150px;
+border-radius:40px;
+background: #ff5757;
+border: 2px solid black;
+color:black;
+letter-spacing:1px;
+text-shadow:0;
 }
 .navbar a:hover {
     
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 8px;
+    background: black;
+    color:#ff5757;
     transition: width 2s;
   } 
 
@@ -34,11 +44,20 @@
 
 #search__button{
     font-family:'Inconsolata', monospace ;
-    text-align: center;
-    background-color: black;
-    color:#ff5757; ;
-    cursor: pointer;
-    font-size: 20px;
-    border-radius: 20%;
+   
+outline:none;
+height: 40px;
+text-align: center;
+width: 70px;
+border-radius:40px;
+background: black;
+border: 2px solid #ff5757;;
+color:#ff5757;;
+letter-spacing:1px;
+text-shadow:0;
 }
   
+#search__button:hover{
+    background: #ff5757;
+    color:black;
+ }
