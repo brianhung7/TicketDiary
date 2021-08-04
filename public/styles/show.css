@@ -8,6 +8,12 @@ body {
 .buttons__container__like{
   display: flex;
 }
+
+a{
+  text-decoration: none;
+  color: #ff5757;
+}
+
 .bigContainer {
   margin-top: 80px;
   display: flex;

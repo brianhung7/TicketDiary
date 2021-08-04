@@ -68,7 +68,7 @@
 
                                 <img class="imageSize" src="<%= comment.user.avatar %>" alt="" srcset="">
                                 <span class="red">
-                                    <%= comment.user.username %>:
+                                    <a href="/users/<%= comment.user._id %> "><%= comment.user.username %></a>:
                                 </span>
                                 <%= comment.content %>
                                     <% if ( typeof user !=='undefined' && comment.user._id==user.id) { %>
