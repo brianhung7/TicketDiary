@@ -62,8 +62,6 @@ app.use(express.static("public"));
 
  app.use(methodOverride("_method"));
 
-// app.use(require("./utils/logger"));
-
 // // auth required 
 // if user is authenticated 
 // do nothing 
