@@ -42,6 +42,7 @@ body {
   padding-top: 3px;
   margin: 5px;
   color: white;
+  line-height: 1.3em;
 }
 
 .comments {
@@ -51,10 +52,13 @@ body {
   padding-top: 3px;
   margin: 5px;
   color: white;
+  line-height: 1.3em;
 }
 
-.red {
+.red a {
   color: #ff5757;
+  
+  text-decoration: none;
 }
 
 .align {

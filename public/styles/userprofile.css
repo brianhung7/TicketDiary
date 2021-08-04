@@ -30,14 +30,15 @@ body {
 .profile__links {
     display:flex;
     justify-content: center;
+    
 }
 
 .profile__link{
   font-family: 'Inconsolata', monospace;
   outline:none;
-  height: 40px;
   text-align: center;
-  width: 135px;
+  padding: 13px 20px 13px 20px;
+  font-weight: bold;
   border-radius:40px;
   background: black;
   border: 2px solid #ff5757;
@@ -46,6 +47,7 @@ body {
   text-shadow:0;
   margin-left: 10px;
   margin-bottom: 30px;
+  justify-content: center;
 }
 
 .profile__link:hover{
