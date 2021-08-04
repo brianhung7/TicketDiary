@@ -61,9 +61,11 @@ h1 {
 }
 .card .menu-content li {
   display: inline-block;
+  
 }
 .card .menu-content a {
   color: #ff5757;
+  margin-top: 10px;
 }
 .card .menu-content span {
   position: absolute;

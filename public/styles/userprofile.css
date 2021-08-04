@@ -180,13 +180,17 @@ h1 {
   float: right;
 }
 .card .menu-content li {
-  margin: 0 5px;
+  margin: 0 20px;
   position: relative;
 }
 .card .menu-content span {
   transition: all 0.3s;
   opacity: 0;
+  font-size: 24px;
+  
 }
+
+
 .card .data {
   color: white;
   transform: translateY(calc(70px + 4em));
