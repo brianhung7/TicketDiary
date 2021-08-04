@@ -63,8 +63,8 @@ router.get("/:id/edit", async (req, res, next) => {
         const context = {
             user: foundUser,
         }
-        //return res.render("posts/edit", context);
-        res.send("Updated User");
+        console.log(context.user);
+        return res.render("users/profileedit", context);
     } catch (error) {
         console.log(error);
         req.error = error;
