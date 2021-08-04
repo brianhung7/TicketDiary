@@ -11,7 +11,7 @@
 }
 
 .navbar-end{
-    margin-right: 10px;
+    margin-right: 35px;
 }
 
 #td__logo{
@@ -30,6 +30,12 @@ border: 2px solid black;
 color:black;
 letter-spacing:1px;
 text-shadow:0;
+padding: 0px 8px 0px 8px;
+}
+
+#landing__link{
+    background:#18222c;
+    border: none;
 }
 .navbar a:hover {
     

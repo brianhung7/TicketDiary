@@ -50,6 +50,29 @@ router.get("/:id/favorites", async (req, res, next) => {
     }
 })
 
+//update get route
+router.get("/:id/edit", async (req, res, next) => {
+    try {
+        const foundUser = await User.findById(req.params.id);
+        if (!req.session.currentUser || foundUser._id != req.session.currentUser.id) {
+            const context = {
+                error: { message: "These are not the droids (profiles) you are looking for (should be editing)" },
+            };
+            return res.render("404", context);
+        }
+        const context = {
+            user: foundUser,
+        }
+        console.log(context.user);
+        return res.render("users/profileedit", context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+//update put route
 
 module.exports = router;
 
