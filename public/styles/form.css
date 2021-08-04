@@ -62,6 +62,7 @@ body{
   .avatar__img{
       width: 100px;
       height: 95px;
+      border-radius: 20%;
       padding: 0px 5px 0px 5px;
   }
   
