@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -131,5 +132,16 @@ button:hover{
     
     transform: scale(1.1);
     transition:300ms ease-in-out;
+}
+h3{
+   display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.fab{
+    color: white;
+}
+.fab:hover{
+    color:#ff5757;
 }
 /* End Landing Page */

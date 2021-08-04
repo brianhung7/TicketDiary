@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 .navbar.is-fixed-top{
     font-family:'Inconsolata', monospace ;  
+    left: 0;
     display: flex;
     justify-content:space-between;
     font-size: 22px;
