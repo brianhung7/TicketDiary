@@ -3,16 +3,43 @@
 $movie-blue: #18222c;
 $movie-red: #ff5757;
 $movie-white: rgb(255, 196, 196);
+$movie-green: #1ECD97;
+$font: 'Inconsolata', monospace;
 
+@mixin highlight {
+font-family: $font;
+outline:none;
+height: 40px;
+text-align: center;
+width: 100px;
+border-radius:40px;
+background: black;
+border: 2px solid $movie-red;
+color:$movie-red;
+letter-spacing:1px;
+text-shadow:0;
+}
+@mixin box{
+    background-color: black;
+    border-radius:40px;
+    padding: 20px;
+    padding-top: 3px;
+    margin: 5px;
+    color: white;
+    
+}
 body{
     background-color: $movie-blue;
+    font-family: $font;
+    text-decoration: none;
 }
 
 .bigContainer{
+    margin-top: 20px;
     display: flex;
     padding: 15px;
     justify-content: center;
-   
+
 }
 
 .container1{
@@ -30,4 +57,36 @@ body{
 
 .container2{
     padding-left: 70px;
+    margin: 30px;
+}
+
+.content {
+  @include box;
+}
+
+.comments{
+    @include box;
+}
+.red{
+    color: $movie-red;
+}
+.align{
+    display: flex;
+    text-align: center;
+    justify-content:center;
+}
+
+.input{
+    @include highlight;
+    width: 30px;
+}
+
+.button{
+    @include highlight;
+    margin-top: 3px;
+    margin-left: 10px;
+ &:hover{
+    background: $movie-red;
+    color:black;
+ }
 }
