@@ -1,15 +1,19 @@
 <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
-    
+
     <div class="navbar-brand">
-        <a href="/" id="landing__link"><img src="/styles/logo.svg" id="td__logo" /></a>
+        <a href="/" id="landing__link">
+            <img src="/styles/logo.svg" id="td__logo" />
+            <span class="site__name">Ticket Diary </span>
+        </a>
     </div>
-    
+
     <form action="/gallery">
         <div class="searchbar">
-            <input class="input" type="search" placeholder="Find a post" name="q">
+            <input class="input" type="search" placeholder="Find a genre, movie, or post" name="q">
             <input type="submit" class="button fa fa-search" id="search__button" value="Search">
         </div>
     </form>
+
     <!-- this will add a link to the new route -->
     <div class="navbar-menu navbar-end">
         <a class="navbar navbar-item" href="/gallery"> Gallery</a>
