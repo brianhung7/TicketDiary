@@ -59,7 +59,7 @@ const seedUsers = async () => {
             username: "Anonymous",
             email: `anonymous@yahoo.com`,
             password: 'sdf',
-            avatar: "/resources/avatar.svg",
+            avatar: "/resources/avatar.png",
             biography: "We are those who haven't logged in",
             _id: ObjectId('120569a838391314d541f1fd'),
 
@@ -67,7 +67,6 @@ const seedUsers = async () => {
     ],
         function (error, createdUsers) {
             if (error) return console.log(error);
-            //console.log("Anonymous made:", createdUsers);
         }
     )
     for (let i = 0; i < usernameArr.length; i++) {
@@ -76,17 +75,17 @@ const seedUsers = async () => {
                 username: usernameArr[i],
                 email: `${usernameArr[i]}@yahoo.com`,
                 password: 'sdf',
-                avatar: avatarArr[Math.floor(Math.random() * (avatarArr.length - 1))],
-                biography: bioArr[Math.floor(Math.random() * (bioArr.length - 1))],
+                avatar: avatarArr[Math.floor(Math.random() * avatarArr.length)],
+                biography: bioArr[Math.floor(Math.random() * bioArr.length )],
                 _id: ObjectId(userIdArr[i]),
 
             },
         ],
             function (error, createdUsers) {
                 if (error) return console.log(error);
-                //console.log("User seed made:", createdUsers);
             }
         )
+        
     }
 }
 
@@ -101,7 +100,7 @@ const seedPosts = async () => {
         for (let i = 0; i < posterArr.length; i++) {
             let tagList = [];
             for (let j = 0; j < numSeedTags; j++) {
-                randTag = postTagsArr[Math.floor(Math.random() * (postTagsArr.length - 1))];
+                randTag = postTagsArr[Math.floor(Math.random() * postTagsArr.length )];
                 if (!tagList.includes(randTag)) {
                     tagList.push(randTag);
                 }
@@ -112,7 +111,7 @@ const seedPosts = async () => {
                         //title: postTitleArr[Math.floor(Math.random() * (postTitleArr.length - 1))],
                         title: posterArr[i].title,
                         image: posterArr[i].img,
-                        description: postDescriptionArr[Math.floor(Math.random() * (postDescriptionArr.length - 1))],
+                        description: postDescriptionArr[Math.floor(Math.random() * postDescriptionArr.length )],
                         user: userIdArr[Math.floor(Math.random() * (userIdArr.length - 1))],
                         tags: tagList,
                         numComments: commentsPerPost,
@@ -146,9 +145,9 @@ const seedComments = async () => {
                 await Comment.insertMany(
                     [
                         {
-                            content: commentArr[Math.floor(Math.random() * (commentArr.length - 1))],
+                            content: commentArr[Math.floor(Math.random() * commentArr.length )],
                             post: postIdArr[i],
-                            user: userIdArr[Math.floor(Math.random() * (userIdArr.length - 1))],
+                            user: userIdArr[Math.floor(Math.random() * userIdArr.length )],
                         },
                     ]
                 )

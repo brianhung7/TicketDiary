@@ -55,6 +55,7 @@ body {
 .user__info__container{
     display: flex;
     justify-content: center;
+    margin-top: 65px;
 }
 
 .name__bio{
@@ -72,8 +73,8 @@ h1 {
 }
 
 .avatar__image{
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
 }
 .row {
   max-width: 900px;
@@ -179,13 +180,17 @@ h1 {
   float: right;
 }
 .card .menu-content li {
-  margin: 0 5px;
+  margin: 0 20px;
   position: relative;
 }
 .card .menu-content span {
   transition: all 0.3s;
   opacity: 0;
+  font-size: 24px;
+  
 }
+
+
 .card .data {
   color: white;
   transform: translateY(calc(70px + 4em));

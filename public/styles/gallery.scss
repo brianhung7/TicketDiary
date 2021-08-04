@@ -14,10 +14,18 @@ $font: 'Inconsolata', monospace;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 95px;
   
 }
 .content{
   background-color: $black;
+}
+
+.search__message{
+  position: relative;
+  margin-top: 75px;
+  font-size: 24px;
+  color: antiquewhite;
 }
 
 @mixin cf {
@@ -73,12 +81,13 @@ h1 {
     }
     a {
       color: $movie-red;
+      margin-top: 10px;
     }
     span {
       position: absolute;
       left: 50%;
       top: 0;
-      font-size: 10px;
+      font-size: 18px;
       font-weight: 700;
       font-family: $font;
       transform: translate(-50%, 0);
