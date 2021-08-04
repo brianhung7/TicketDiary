@@ -8,7 +8,9 @@
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
     z-index: 5;
-    padding: 10px 0px 10px 0px;
+    padding: 20px 0px 10px 0px;
+    background: rgba(0,0,0, 0.5);
+    backdrop-filter: blur(10px);
     
 }
 
@@ -38,14 +40,15 @@ text-decoration: none;
 }
 
 #landing__link{
-    background:#18222c;
+    display: flex;
+    padding-left: 20 px;
+    background:#000000;
     border: none;
     color: #ff5757;
+    margin-right: 0;
 }
 
-.site__name{
-    
-}
+
 
 .navbar a:hover {
     
