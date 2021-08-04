@@ -19,6 +19,11 @@ color:$movie-red;
 letter-spacing:1px;
 text-shadow:0;
 }
+
+.buttons__container__like{
+    display: flex;
+  }
+  
 @mixin box{
     background-color: black;
     border-radius:40px;

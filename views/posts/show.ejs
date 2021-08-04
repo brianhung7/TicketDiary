@@ -22,12 +22,24 @@
             <div class="bigContainer">
                 <div class="container1">
                     <img class="poster_show" width=400px src="<%= post.image %>" alt="Placeholder image" />
-                    <% if ( typeof user !=='undefined' ) { %>
-                        <form action="/likes/<%= post.id %>?_method=PUT" method="POST">
+                    <div class="buttons__container__like">
+                        <% if ( typeof user !=='undefined' ) { %>
+                            <form action="/likes/<%= post.id %>?_method=PUT" method="POST">
 
-                            <input class="button" type="submit" value="Like" />
-                        </form>
-                        <% } %>
+                                <input class="button" type="submit" value="Like" />
+                            </form>
+                            <% } %>
+                                <% if ( typeof user !=='undefined' && post.user._id==user.id) { %>
+                                    <div class="buttons">
+                                        <a href="/gallery/<%= post.id %>/edit">
+                                            <input class="button" type="submit" value="Edit Post" />
+                                        </a>
+                                    </div>
+                                    <form action="/gallery/<%= post.id %>?_method=DELETE" method="POST">
+                                        <input class="button" type="submit" value="Delete Post" />
+                                    </form>
+                                    <% } %>
+                    </div>
                 </div>
 
                 <div class="container2">
@@ -56,7 +68,7 @@
 
                                 <img class="imageSize" src="<%= comment.user.avatar %>" alt="" srcset="">
                                 <span class="red">
-                                    <%= comment.user.username %>:
+                                    <a href="/users/<%= comment.user._id %> "><%= comment.user.username %></a>:
                                 </span>
                                 <%= comment.content %>
                                     <% if ( typeof user !=='undefined' && comment.user._id==user.id) { %>
@@ -83,14 +95,7 @@
                             </div>
                         </form>
                     </div>
-                    <% if ( typeof user !=='undefined' && post.user._id==user.id) { %>
-                        <div class="buttons">
-                            <a class="button" href="/gallery/<%= post.id %>/edit">Edit Post</a>
-                        </div>
-                        <form action="/gallery/<%= post.id %>?_method=DELETE" method="POST">
-                            <input class="button" type="submit" value="Delete Post" />
-                        </form>
-                        <% } %>
+
 
                 </div>
             </div>
