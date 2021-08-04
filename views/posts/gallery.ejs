@@ -25,12 +25,16 @@
                             <!-- <li>
                               <a href="#" class="fa fa-bookmark-o"></a>
                             </li> -->
-                            <li><a href="#" class="fas fa-heart"><span>
+                            <li class="icon"><a href="#" class="fas fa-heart">
+                                <span class="icon">
                                   <%=likes[idx].numLikes%>
-                                </span></a></li>
-                            <li><a href="#" class="fas fa-comment"><span>
+                                </span></a>
+                            </li>
+                            <li class="icon"><a href="#" class="fas fa-comment">
+                                <span class="icon">
                                   <%=post.numComments%>
-                                </span></a></li>
+                                </span></a>
+                            </li>
                           </ul>
                         </div>
                         <div class="data">
@@ -43,7 +47,6 @@
                               </a></h1>
                             <p class="text">
                               <%= post.description %>
-                                COMMENTS <%=post.numComments%>
                             </p>
                             <a href="/gallery/<%= post.id %>" class="button">Read more</a>
                           </div>

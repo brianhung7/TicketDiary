@@ -9,9 +9,15 @@ router.get("/:id", async (req, res, next) => {
     try {
         const userPosts = await Post.find({ user: req.params.id }).populate("user");
         const foundUser = await User.findById(req.params.id);
+        let allLikes = [];
+        for (let i = 0; i < userPosts.length; i++) {
+            let foundLike = await Like.findOne({ post: `${userPosts[i]._id}` });
+            allLikes.push(foundLike);
+        }
         const context = {
             posts: userPosts,
             userProfile: foundUser,
+            likes: allLikes,
         };
         res.render("users/profile", context);
     } catch (error) {
