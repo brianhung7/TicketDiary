@@ -10,6 +10,10 @@
     z-index: 5;
 }
 
+.navbar-end{
+    margin-right: 10px;
+}
+
 #td__logo{
     width: 40px;
 }
