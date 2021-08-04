@@ -143,5 +143,7 @@ h3{
 }
 .fab:hover{
     color:#ff5757;
+    transform: scale(1.1);
+    transition:300ms ease-in-out;
 }
 /* End Landing Page */
