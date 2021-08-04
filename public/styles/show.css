@@ -5,6 +5,9 @@ body {
   text-decoration: none;
 }
 
+.buttons__container__like{
+  display: flex;
+}
 .bigContainer {
   margin-top: 80px;
   display: flex;
