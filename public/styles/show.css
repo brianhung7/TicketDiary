@@ -1,17 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap");
+.buttons__container__like {
+  display: flex;
+}
+
 body {
   background-color: #18222c;
   font-family: "Inconsolata", monospace;
   text-decoration: none;
-}
-
-.buttons__container__like{
-  display: flex;
-}
-
-a{
-  text-decoration: none;
-  color: #ff5757;
 }
 
 .bigContainer {
