@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 .navbar.is-fixed-top{
+    font-family:'Inconsolata', monospace ;  
     display: flex;
     justify-content:space-between;
     font-size: 22px;
@@ -23,19 +25,19 @@
     width: 40px;
 }
 .navbar a{
-font-family:'Inconsolata', monospace ;   
-font-size: 20px;
-outline:none;
-text-align: center;
-width: 150px;
-border-radius:40px;
-background: #ff5757;
-border: 2px solid black;
-color:black;
-letter-spacing:1px;
-text-shadow:0;
-padding: 10px 8px 10px 8px;
-text-decoration: none;
+    margin-left: 10px;
+    font-size: 20px;
+    outline:none;
+    text-align: center;
+    width: 150px;
+    border-radius:40px;
+    background: black;
+    border: 2px solid #ff5757;
+    color:#ff5757;
+    letter-spacing:1px;
+    text-shadow:0;
+    padding: 10px 8px 10px 8px;
+    text-decoration: none;
 
 }
 
@@ -47,14 +49,16 @@ text-decoration: none;
     color: #ff5757;
     margin-right: 0;
 }
-
+.navbar-item{
+    margin: 0;
+    padding:0;
+}
 
 
 .navbar a:hover {
-    
-    background: black;
-    color:#ff5757;
-    transition: width 2s;
+    background:#ff5757;
+    color:black;
+    transition:300ms ease-in-out;
   } 
 
  
