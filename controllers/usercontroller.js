@@ -33,12 +33,14 @@ router.get("/:id/favorites", async (req, res, next) => {
         const likedPosts = await Like.find({ userArr: req.params.id });
         const foundUser = await User.findById(req.params.id);
         const postArr = [];
+        let allLikes = [];
         for (i = 0; i < likedPosts.length; i++) {
             postArr.push(await Post.findById(likedPosts[i].post));
         }
         context = {
             posts:postArr,
             userProfile:foundUser,
+            likes: likedPosts,
         }
         res.render("users/profilefavorites",context);
     } catch (error) {
