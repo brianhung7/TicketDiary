@@ -17,55 +17,80 @@
 <%- include('../partials/_head') %>
 
     <body>
-        <%- include('../partials/_navbar') %>
-            <img class="poster_show" width=450px src="<%= post.image %>" alt="Placeholder image" />
-            <div> <a href="/users/<%= post.user._id %>"> Username: <%= post.user.username %> </a> </div>
-            <div>Post Title: <%= post.title %>
-            </div>
-            <div>Description: <%= post.description %>
-            </div>
-            <div>Likes: <%= likes.numLikes %>
-            </div>
-            <div>Tags: <%= post.tags %>
-            </div>
-            <div class="comment_form">
-                <form action="../comments" method="POST">
-                    <input class="input" type="text" name="content" placeholder="Leave a comment!" required />
-                    <input type="hidden" name="post" value="<%= post._id %>" />
-                    <div>
-                        <button class="button ">Submit New Comment</button>
-                    </div>
-                </form>
 
-            </div>
-            <div class="comments">
-                <% comments.forEach(comment=> { %>
-                    <div class="comment">
-                        <img src="<%= comment.user.avatar %>" alt="" srcset="">
-                        <%= comment.user.username %> Says <%= comment.content %>
-                                <% if ( typeof user !=='undefined' && comment.user._id==user.id) { %>
-                                    <form action="../comments/<%=comment.id%>?_method=DELETE" method="POST">
-                                        <div>
-                                            <button class="button ">Delete Comment</button>
-                                        </div>
-                                    </form>
-                                    <% } %>
-                    </div>
-                    <% }) %>
-            </div>
-            <% if ( typeof user !=='undefined' && post.user._id==user.id) { %>
-                <div class="buttons">
-                    <a class="button" href="/gallery/<%= post.id %>/edit">Edit Post</a>
+        <%- include('../partials/_navbar') %>
+            <div class="bigContainer">
+                <div class="container1">
+                    <img class="poster_show" width=400px src="<%= post.image %>" alt="Placeholder image" />
                 </div>
-                <form action="/gallery/<%= post.id %>?_method=DELETE" method="POST">
-                    <input class="button" type="submit" value="Delete Post" />
-                </form>
-                <% } %>
-                    <% if ( typeof user !=='undefined') { %>
-                        <form action="/likes/<%= post.id %>?_method=PUT" method="POST">
-                            <input class="button" type="submit" value="Like Post" />
+                <div class="container2">
+                    <div class="content">
+                        <h3>Post</h3>
+                        <div> <a href="/users/<%= post.user._id %>"> Username: <%= post.user.username %> </a> </div>
+                        <div><span class="red">Post Title:</span>
+                            <%= post.title %>
+                        </div>
+                        <div><span class="red">Description:</span>
+                            <%= post.description %>
+                        </div>
+                        <div><span class="red">Likes:</span>
+                            <%= likes.numLikes %>
+                        </div>
+                        <div><span class="red">Tags:</span>
+                            <%= post.tags %>
+                        </div>
+                    </div>
+
+                    <div class="comments">
+                        <h3>Comments</h3>
+                        <% comments.forEach(comment=> { %>
+                            <div class="comment">
+
+                                <img src="<%= comment.user.avatar %>" alt="" srcset="">
+                                <span class="red">
+                                    <%= comment.user.username %>:
+                                </span>
+                                <%= comment.content %>
+                                    <% if ( typeof user !=='undefined' && comment.user._id==user.id) { %>
+                                        <form action="../comments/<%=comment.id%>?_method=DELETE" method="POST">
+                                            <div>
+                                                <button class="button ">Delete Comment</button>
+                                            </div>
+                                        </form>
+                                        <% } %>
+                            </div>
+                            <% }) %>
+                    </div>
+                    <div class="comment_form">
+                        <form action="../comments" method="POST">
+                            <div class="align">
+
+                                <input class="input" type="text" name="content" placeholder="Leave a comment!"
+                                    required />
+                                <input type="hidden" name="post" value="<%= post._id %>" />
+
+                                <div>
+                                    <button class="button ">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <% if ( typeof user !=='undefined' && post.user._id==user.id) { %>
+                        <div class="buttons">
+                            <a class="button" href="/gallery/<%= post.id %>/edit">Edit Post</a>
+                        </div>
+                        <form action="/gallery/<%= post.id %>?_method=DELETE" method="POST">
+                            <input class="button" type="submit" value="Delete Post" />
                         </form>
                         <% } %>
+                            <% if ( typeof user !=='undefined' && post.user._id==user.id) { %>
+                                <form action="/likes/<%= post.id %>?_method=PUT" method="POST">
+                                    <input class="button" type="submit" value="Like Post" />
+                                </form>
+                                <% } %>
+                                    <!-- container 2 end -->
+                </div>
+            </div>
     </body>
 
 </html>
