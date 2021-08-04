@@ -6,7 +6,7 @@
     color: #18222c;
 }
 h1{
-    margin-top: 8vh;
+    margin-top: 12vh;
     color: seashell;
 }
 #form__box{
@@ -21,8 +21,10 @@ body{
     font-size: 1.3em;
 }
 
-.form__input{
+.form__input input{
     margin: 10px 0px 10px 0px;
+    background-color: white;
+    color: #18222c;
 }
 
 .form__button{

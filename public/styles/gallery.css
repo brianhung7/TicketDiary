@@ -5,6 +5,14 @@
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 95px;
+}
+
+.search__message{
+  position: relative;
+  margin-top: 75px;
+  font-size: 24px;
+  color: antiquewhite;
 }
 
 .content {

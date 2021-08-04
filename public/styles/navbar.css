@@ -3,7 +3,11 @@
     justify-content: space-between;
     font-size: 22px;
     background-color: #18222c;
-    padding: 15px;
+    padding: 15px 15px 0px 15px;
+    position: fixed;
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 5;
 }
 
 #td__logo{

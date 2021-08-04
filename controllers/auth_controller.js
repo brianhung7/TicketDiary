@@ -65,7 +65,6 @@ router.post("/login", async (req, res) => {
             id: foundUser._id,
             username: foundUser.username,
         };
-        console.log("Logged in!");
         return res.redirect("/gallery");
     } catch (error) {
         console.log(error);

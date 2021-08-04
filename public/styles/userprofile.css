@@ -55,6 +55,7 @@ body {
 .user__info__container{
     display: flex;
     justify-content: center;
+    margin-top: 65px;
 }
 
 .name__bio{
