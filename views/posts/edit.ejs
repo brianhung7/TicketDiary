@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/styles/form.css">
+
+    <body>
+        <%- include('../partials/_navbar') %>
+            <div class="form__container">
+                <h1 class="form__name">Edit Post</h1>
+                <form action="/gallery/<%= post.id %>?_method=PUT" method="POST" id="form__box">
+                    <% if (typeof error !=='undefined' ) { %>
+                        <article class="message is-danger">
+                            <div class="message-header">
+                                <p>Danger</p>
+                            </div>
+                            <div class="message-body">
+                                <%= error.message %>
+                            </div>
+                        </article>
+                        <% } %>
+                            <div class="form__input">
+                                <label for="title">Post Title</label><br/>
+                                <input type="text" class="input" placeholder="Post title" name="title" id="title" maxlength="30"
+                                    value="<%= post.title %>">
+                            </div>
+                            <div class="form__input">
+                                <label for="image">Image Link</label><br/>
+                                <input type="text" class="input" placeholder="URL" name="image"id="image"
+                                    value="<%= post.image %>" required>
+                            </div>
+                            <div class="form__input">
+                                <label for="description">Description</label><br/>
+                                <input type="text" class="input" placeholder="Description" name="description" id="description" maxlength="300"
+                                    value="<%= post.description%> ">
+                            </div>
+                            <div class="form__input">
+                                <label for="tags">Tags</label><br/>
+                                <input type="text" class="input" placeholder="Tags" name="tags" id="tags"
+                                    value="<%= post.tags%> ">
+                            </div>
+                            <div>
+                                <button class="form__button">Update Post</button>
+                            </div>
+                </form>
+            </div>
+    </body>
+
+</html>

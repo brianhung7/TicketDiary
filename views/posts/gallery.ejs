@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/_head') %>
+  <link rel="stylesheet" href="/styles/gallery.css">
+
+  <body>
+    <%- include('../partials/_navbar',{routes}) %>
+      <main class="container__gallery">
+        <% if (searchTerm){ %>
+          <div class="search__message">Showing results for <%= searchTerm %>
+          </div>
+          <% } %>
+
+            <div class="columns">
+              <% for(let idx=0; idx < posts.length; idx++){ %>
+                <% const post=posts[idx] %>
+                  <div class="column">
+                    <!-- <article class=> -->
+
+                    <div class="card">
+                      <div class="wrapper" style="background-image: url('<%= post.image %>');">
+
+                        <div class="header">
+                          <ul class="menu-content">
+                            <!-- <li>
+                              <a href="#" class="fa fa-bookmark-o"></a>
+                            </li> -->
+                            <li class="icon"><a href="#" class="fas fa-heart">
+                                <span class="icon">
+                                  <%=likes[idx].numLikes%>
+                                </span></a>
+                            </li>
+                            <li class="icon"><a href="#" class="fas fa-comment">
+                                <span class="icon">
+                                  <%=post.numComments%>
+                                </span></a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="data">
+                          <div class="content">
+                            <span class="author">
+                              <%= post.user.username %>
+                            </span>
+                            <h1 class="title"><a href="/gallery/<%= post.id %>">
+                                <%= post.title %>
+                              </a></h1>
+                            <p class="text">
+                              <%= post.description %>
+                            </p>
+                            <a href="/gallery/<%= post.id %>" class="button">Read more</a>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <!-- example end -->
+                    <!-- </article> -->
+                  </div>
+                  <% } %>
+
+      </main>
+  </body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/styles/form.css">
+
+    <body>
+        <%- include('../partials/_navbar') %>
+            <div class="form__container">
+                <h1 class="form__name">Register</h1>
+                <form action="/register" method="POST" id="form__box">
+                    <% if (typeof error !=='undefined' ) { %>
+                        <article class="message is-danger">
+                            <div class="message-header">
+                                <p>Danger</p>
+                            </div>
+                            <div class="message-body">
+                                <%= error.message %>
+                            </div>
+                        </article>
+                        <% } %>
+                            <div class="form__input">
+                                <label for="username">Username</label><br />
+                                <input type="text" class="input" placeholder="MovieGuy" name="username" maxlength="30"
+                                    id="username" required>
+                            </div>
+                            <div class="form__input">
+                                <label for="email">Email Address</label><br />
+                                <input type="email" class="input" placeholder="MovieGuy@gmail.com" name="email"
+                                    id="email" required>
+                            </div>
+                            <div class="form__input">
+                                <label for="password">Password</label><br />
+                                <input type="password" class="input" placeholder="******" name="password" id="password"
+                                    required>
+                            </div>
+                            <div class="form__input">
+                                <label for="biography">Profile Biography</label><br />
+                                <input type="text" class="input" placeholder="I love watching movies!" name="biography"
+                                    maxlength="300" id="biography">
+                            </div>
+                            <div class="avatar__container">
+                                <span class="radio">
+                                    <input type="radio" id="avatar" name="avatar" value="/resources/avatar.png">
+                                    <label for="radio1">
+                                        <div><img class="avatar__img" src="/resources/avatar.png" alt="" data="avatar">
+                                        </div>
+                                    </label>
+                                </span>
+                                <span class="radio">
+                                    <input type="radio" id="panda" name="avatar" value="/resources/panda.png">
+                                    <label for="radio2">
+                                        <div><img class="avatar__img" src="/resources/panda.png" alt="" data="panda"></div>
+                                    </label>
+                                </span>
+                                <span class="radio">
+                                    <input type="radio" id="dragon" name="avatar" value="/resources/dragon.png">
+                                    <label for="radio3">
+                                        <div><img class="avatar__img" src="/resources/dragon.png" alt="" data="dragon">
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+
+                            <div>
+                                <button class="form__button">Sign Up</button>
+                            </div>
+                </form>
+            </div>
+
+    </body>
+
+    <script>
+        var a = document.getElementsByClassName("avatar__img");
+        for (var i = 0; i < a.length; i++) {
+            a[i].onclick = function () {
+                var id = this.getAttribute("data");
+                document.getElementById(id).checked = true;
+            }
+        }
+    </script>

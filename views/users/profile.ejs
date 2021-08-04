@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/_head') %>
+  <link rel="stylesheet" href="/styles/userprofile.css">
+
+  <body>
+    <%- include('../partials/_navbar',{routes}) %>
+      <div class="user__info__container">
+        <div class="bio__name__avatar"></div>
+        <div> <img class="avatar__image" src="<%= userProfile.avatar %>" alt="" srcset=""></div>
+
+        <div class="name__bio">
+          <div>
+            <%= userProfile.username %>
+          </div>
+          <div> "<%= userProfile.biography %>"
+          </div>
+        </div>
+      </div>
+      <div class="profile__links">
+        <a href="/users/<%= userProfile._id %>">
+          <div class="profile__link">
+            View Film Posts
+          </div>
+        </a>
+        <a href="/users/<%= userProfile._id %>/favorites">
+          <div class="profile__link">
+            View Favorites
+          </div>
+        </a>
+      </div>
+      </div>
+      <main class="container__gallery">
+        <div class="columns">
+          <% for(let idx=0; idx < posts.length; idx++){ %>
+            <% const post=posts[idx] %>
+              <div class="column">
+                <!-- <article class=> -->
+
+                <div class="card">
+                  <div class="wrapper" style="background-image: url('<%= post.image %>');">
+
+                    <div class="header">
+                      <ul class="menu-content">
+
+                        <li><span class="icon">
+                            <i class="fas fa-heart"></i>
+                            <%=likes[idx].numLikes%>
+                          </span>
+                        </li>
+                        <li><span class="icon num__comments">
+                            <i class="fas fa-comment"></i>
+                            <%=post.numComments%>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="data">
+                      <div class="content">
+                        <span class="author">
+                          <%= post.user.username %>
+                        </span>
+                        <h1 class="title"><a href="/gallery/<%= post.id %>">
+                            <%= post.title %>
+                          </a></h1>
+                        <p class="text">
+                          <%= post.description %>
+
+                        </p>
+                        <a href="/gallery/<%= post.id %>" class="button">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- example end -->
+                <!-- </article> -->
+              </div>
+              <% } %>
+
+      </main>
+  </body>
+
+</html>

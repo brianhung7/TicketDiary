@@ -1,0 +1,14 @@
+body{
+    background-color: #18222c;
+    
+    text-align: center;
+}
+
+section{
+    margin-top: 20vh;
+    color: antiquewhite;
+}
+
+#img__404{
+    border-radius: 10%;
+}

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+.navbar.is-fixed-top{
+    font-family:'Inconsolata', monospace ;  
+    display: flex;
+    justify-content:space-between;
+    font-size: 22px;
+    background-color: #18222c;
+    padding: 15px 15px 0px 15px;
+    position: fixed;
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 5;
+    padding: 20px 0px 10px 0px;
+    background: rgba(0,0,0, 0.5);
+    backdrop-filter: blur(10px);
+    
+}
+/* .navbar-menu{
+    display: flex;
+    justify-content: space-between;
+} */
+
+.navbar-end{
+    margin-right: 35px;
+    margin-top: 6px;
+}
+
+#td__logo{
+    width: 40px;
+}
+.navbar a{
+    margin-top: -10px;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 20px;
+    outline:none;
+    text-align: center;
+    width: 112px;
+    border-radius:40px;
+    background: black;
+    border: 2px solid #ff5757;
+    color:#ff5757;
+    letter-spacing:1px;
+    text-shadow:0;
+    padding: 5px 6px 5px 6px;
+    text-decoration: none;
+    
+}
+
+#landing__link{
+    display: flex;
+    padding-left: 20 px;
+    background:#000000;
+    border: none;
+    color: #ff5757;
+    margin-right: 0;
+}
+.navbar-item{
+    margin: 0;
+    padding:0;
+}
+
+
+.navbar a:hover {
+    background:#ff5757;
+    color:black;
+    transition:300ms ease-in-out;
+  } 
+
+ 
+.input{
+    width: 300px;
+  height: 45px;
+  border-radius: 30px;
+  outline: none;
+  padding-left: 15px;
+  background: #000000; 
+  border: 2px solid #013243;
+  color: rgb(255, 255, 255); 
+}
+
+#search__button{
+    font-family:'Inconsolata', monospace ;
+   font-size: 20px;
+outline:none;
+height: 40px;
+text-align: center;
+width: 100px;
+border-radius:40px;
+background: black;
+border: 2px solid #ff5757;;
+color:#ff5757;;
+letter-spacing:1px;
+text-shadow:0;
+}
+  
+#search__button:hover{
+    background: #ff5757;
+    color:black;
+ }

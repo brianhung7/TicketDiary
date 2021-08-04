@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    
+    color: white;
+}
+
+.wrapper {
+    animation: scroll 70s linear infinite;
+    background: url("/resources/landingbg.jpeg");
+    color: #eee;
+    height: 100vh;
+    min-width: 360px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    
+  }
+  
+  @keyframes scroll {
+     100%{
+      background-position:0px -3000px;
+    }
+  }
+  
+  @media (prefers-reduced-motion) {
+    .wrapper {
+      animation: scroll 200s linear infinite;
+    }
+  }
+  
+  @media (min-width: 670px) {
+    .title {
+      font-size: 5rem;
+    }
+  }
+
+.container {
+    margin: 10px;
+    width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    
+}
+
+/* Start Landing Page */
+
+.landing-page {
+    position: relative;
+    background-color: #18222c;
+    border-radius: 40px;
+    margin: 50px;
+}
+
+.landing-page .header-area {
+    display: flex;
+    padding: 25px 0 0;
+    position: relative;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    margin-top: 30px;
+}
+
+
+
+
+
+.landing-page .info {
+    width: 35%;
+    float: left;
+    margin-top: 50px;
+}
+
+.landing-page .info h1 {
+    font-size: 44px;
+    margin: 0 0 20px;
+    line-height: 1.4;
+    color:#ff5757 ;
+}
+
+.landing-page .info p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.landing-page .info button {
+    margin-top: 35px;
+    font-family: 'Inconsolata', monospace;
+    outline:none;
+    height: 40px;
+    text-align: center;
+    width: 100px;
+    border-radius:40px;
+    background: black;
+    border: 2px solid #ff5757;
+    color:#ff5757;
+    letter-spacing:1px;
+    text-shadow:0;
+}
+.landing-page .info button:hover {
+    background: #ff5757;
+    color:black;
+}
+
+.landing-page .image {
+    width: 50%;
+    float: right;
+    
+}
+
+.landing-page .image img {
+    max-width: 100%;
+}
+
+.clearfix {
+  clear: both;
+}
+
+button:hover{
+    
+    transform: scale(1.1);
+    transition:300ms ease-in-out;
+}
+/* End Landing Page */
