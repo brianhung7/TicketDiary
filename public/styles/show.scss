@@ -42,7 +42,17 @@ body{
 
 }
 
-.container1{
+// .container1{
+//     box-shadow: 0 10px 20px
+//     $movie-red,
+//      0 6px 6px $movie-red;
+//      border-radius: 10%;
+//      &:hover{
+//         box-shadow: 0 14px 28px $movie-red, 0 10px 10px $movie-red;
+//      }
+// }
+.poster_show{
+    border-radius: 10%;
     box-shadow: 0 10px 20px
     $movie-red,
      0 6px 6px $movie-red;
@@ -50,9 +60,6 @@ body{
      &:hover{
         box-shadow: 0 14px 28px $movie-red, 0 10px 10px $movie-red;
      }
-}
-.poster_show{
-    border-radius: 10%;
 }
 
 .container2{
@@ -89,4 +96,11 @@ body{
     background: $movie-red;
     color:black;
  }
+}
+
+.imageSize{
+    width:30px;
+    height:30px;
+    border-radius: 40px;
+    background-color: $movie-green;
 }

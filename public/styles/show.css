@@ -12,16 +12,13 @@ body {
   justify-content: center;
 }
 
-.container1 {
+.poster_show {
+  border-radius: 10%;
   box-shadow: 0 10px 20px #ff5757, 0 6px 6px #ff5757;
   border-radius: 10%;
 }
-.container1:hover {
+.poster_show:hover {
   box-shadow: 0 14px 28px #ff5757, 0 10px 10px #ff5757;
-}
-
-.poster_show {
-  border-radius: 10%;
 }
 
 .container2 {
@@ -90,6 +87,13 @@ body {
 .button:hover {
   background: #ff5757;
   color: black;
+}
+
+.imageSize {
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+  background-color: #1ECD97;
 }
 
 /*# sourceMappingURL=show.css.map */
