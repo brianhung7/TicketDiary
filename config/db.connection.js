@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
 /* NOTE this is our db connection string */
-//require('dotenv').config();
-const connectionStr = 'mongodb://localhost:27017/ticketdiary';
+require('dotenv').config();
+const connectionStr = process.env.MONGODB_URI || 'mongodb://localhost:27017/ticketdiary';
+
 
 mongoose.connect(connectionStr, {
     useNewUrlParser: true,
