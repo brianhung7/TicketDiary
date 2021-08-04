@@ -3,38 +3,51 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    color: #18222c;
+    
 }
 h1{
     margin-top: 12vh;
-    color: seashell;
+    color: #ff5757;
 }
 #form__box{
     border-radius: 10px;
     padding: 15px 35px 25px 35px;
-    background-color: seashell;
+    background-color: rgb(0, 0, 0);
     text-align: center;
 }
 
 body{
     background-color: #18222c;
+    color: #ff5757;
     font-size: 1.3em;
+    font-family: 'Inconsolata', monospace;
 }
 
 .form__input input{
     margin: 10px 0px 10px 0px;
     background-color: white;
     color: #18222c;
+    border-radius:40px;
 }
 
 .form__button{
-    margin-top: 10px;
-    justify-content: center;
-    padding:10px 20px 10px 20px;
-    border-radius: 15px;
+    margin-top: 35px;
+    font-family: 'Inconsolata', monospace;
+    outline:none;
+    height: 40px;
+    text-align: center;
+    width: 100px;
+    border-radius:40px;
+    background: black;
+    border: 2px solid #ff5757;
+    color:#ff5757;
+    letter-spacing:1px;
+    text-shadow:0;
 }
 
 .form__button:hover{
+    background: #ff5757;
+    color:black;
     transform: scale(1.1);
     transition:300ms ease-in-out;
 }

@@ -97,16 +97,16 @@ body {
 .landing-page .info button {
     margin-top: 35px;
     font-family: 'Inconsolata', monospace;
-outline:none;
-height: 40px;
-text-align: center;
-width: 100px;
-border-radius:40px;
-background: black;
-border: 2px solid #ff5757;
-color:#ff5757;
-letter-spacing:1px;
-text-shadow:0;
+    outline:none;
+    height: 40px;
+    text-align: center;
+    width: 100px;
+    border-radius:40px;
+    background: black;
+    border: 2px solid #ff5757;
+    color:#ff5757;
+    letter-spacing:1px;
+    text-shadow:0;
 }
 .landing-page .info button:hover {
     background: #ff5757;
