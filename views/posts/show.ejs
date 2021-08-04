@@ -22,11 +22,19 @@
             <div class="bigContainer">
                 <div class="container1">
                     <img class="poster_show" width=400px src="<%= post.image %>" alt="Placeholder image" />
+                    <% if ( typeof user !=='undefined' ) { %>
+                        <form action="/likes/<%= post.id %>?_method=PUT" method="POST">
+
+                            <input class="button" type="submit" value="Like" />
+                        </form>
+                        <% } %>
                 </div>
+
                 <div class="container2">
                     <div class="content">
                         <h3>Post</h3>
-                        <div> <a href="/users/<%= post.user._id %>"> Username: <%= post.user.username %> </a> </div>
+                        <div> <a href="/users/<%= post.user._id %>"> Username: <%= post.user.username %> </a>
+                        </div>
                         <div><span class="red">Post Title:</span>
                             <%= post.title %>
                         </div>
@@ -46,7 +54,7 @@
                         <% comments.forEach(comment=> { %>
                             <div class="comment">
 
-                                <img src="<%= comment.user.avatar %>" alt="" srcset="">
+                                <img class="imageSize" src="<%= comment.user.avatar %>" alt="" srcset="">
                                 <span class="red">
                                     <%= comment.user.username %>:
                                 </span>
@@ -83,12 +91,8 @@
                             <input class="button" type="submit" value="Delete Post" />
                         </form>
                         <% } %>
-                            <% if ( typeof user !=='undefined' && post.user._id==user.id) { %>
-                                <form action="/likes/<%= post.id %>?_method=PUT" method="POST">
-                                    <input class="button" type="submit" value="Like Post" />
-                                </form>
-                                <% } %>
-                                    <!-- container 2 end -->
+
+                            <!-- container 2 end -->
                 </div>
             </div>
     </body>
