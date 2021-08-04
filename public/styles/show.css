@@ -55,9 +55,12 @@ body {
   line-height: 1.3em;
 }
 
+.red {
+  color: #ff5757;
+}
+
 .red a {
   color: #ff5757;
-  
   text-decoration: none;
 }
 
