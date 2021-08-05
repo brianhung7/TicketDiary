@@ -15,6 +15,10 @@
 <link rel="stylesheet" href="/styles/show.css">
 </li>
 <%- include('../partials/_head') %>
+    <title>
+        <%= post.title %>
+    </title>
+    <link rel="shortcut icon" href="/styles/logo.svg">
 
     <body>
 
@@ -29,7 +33,8 @@
                                 <input class="button" type="submit" value="Like" />
                             </form>
                             <% } %>
-                                <% if ( typeof user !=='undefined' && (post.user._id==user.id || user.id == '120569a838391314d541f1f1')) { %>
+                                <% if ( typeof user !=='undefined' && (post.user._id==user.id ||
+                                    user.id=='120569a838391314d541f1f1' )) { %>
                                     <div class="buttons">
                                         <a href="/gallery/<%= post.id %>/edit">
                                             <input class="button" type="submit" value="Edit Post" />
@@ -45,7 +50,8 @@
                 <div class="container2">
                     <div class="content">
                         <h3>Post</h3>
-                        <div class="red"> <a href="/users/<%= post.user._id %>"> Username: <%= post.user.username %> </a>
+                        <div class="red"> <a href="/users/<%= post.user._id %>"> Username: <%= post.user.username %>
+                            </a>
                         </div>
                         <div><span class="red">Post Title:</span>
                             <%= post.title %>
@@ -68,10 +74,13 @@
 
                                 <img class="imageSize" src="<%= comment.user.avatar %>" alt="" srcset="">
                                 <span class="red">
-                                    <a href="/users/<%= comment.user._id %> "><%= comment.user.username %></a>:
+                                    <a href="/users/<%= comment.user._id %> ">
+                                        <%= comment.user.username %>
+                                    </a>:
                                 </span>
                                 <%= comment.content %>
-                                    <% if ( typeof user !=='undefined' && (comment.user._id==user.id || user.id == '120569a838391314d541f1f1')) { %>
+                                    <% if ( typeof user !=='undefined' && (comment.user._id==user.id ||
+                                        user.id=='120569a838391314d541f1f1' )) { %>
                                         <form action="../comments/<%=comment.id%>?_method=DELETE" method="POST">
                                             <div>
                                                 <button class="button ">Delete Comment</button>

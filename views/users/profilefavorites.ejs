@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/_head') %>
+  <title>
+    <%= userProfile.username %>
+  </title>
+  <link rel="shortcut icon" href="/styles/logo.svg">
   <link rel="stylesheet" href="/styles/userprofile.css">
 
   <body>
@@ -45,7 +49,7 @@
 
                         <li><span>
                             <i class="fas fa-heart"></i>
-                            <%=likes[idx].numLikes%> 
+                            <%=likes[idx].numLikes%>
                           </span>
                         </li>
                         <li><span>

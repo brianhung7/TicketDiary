@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/_head') %>
+    <title>
+        Edit
+    </title>
+    <link rel="shortcut icon" href="/styles/logo.svg">
     <link rel="stylesheet" href="/styles/form.css">
 
     <body>
@@ -19,22 +23,22 @@
                         </article>
                         <% } %>
                             <div class="form__input">
-                                <label for="title">Post Title</label><br/>
-                                <input type="text" class="input" placeholder="Post title" name="title" id="title" maxlength="30"
-                                    value="<%= post.title %>">
+                                <label for="title">Post Title</label><br />
+                                <input type="text" class="input" placeholder="Post title" name="title" id="title"
+                                    maxlength="30" value="<%= post.title %>">
                             </div>
                             <div class="form__input">
-                                <label for="image">Image Link</label><br/>
-                                <input type="text" class="input" placeholder="URL" name="image"id="image"
+                                <label for="image">Image Link</label><br />
+                                <input type="text" class="input" placeholder="URL" name="image" id="image"
                                     value="<%= post.image %>" required>
                             </div>
                             <div class="form__input">
-                                <label for="description">Description</label><br/>
-                                <input type="text" class="input" placeholder="Description" name="description" id="description" maxlength="300"
-                                    value="<%= post.description%> ">
+                                <label for="description">Description</label><br />
+                                <input type="text" class="input" placeholder="Description" name="description"
+                                    id="description" maxlength="300" value="<%= post.description%> ">
                             </div>
                             <div class="form__input">
-                                <label for="tags">Tags</label><br/>
+                                <label for="tags">Tags</label><br />
                                 <input type="text" class="input" placeholder="Tags" name="tags" id="tags"
                                     value="<%= post.tags%> ">
                             </div>
