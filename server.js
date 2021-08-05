@@ -5,7 +5,7 @@ const express = require("express");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-// require("dotenv").config();
+require("dotenv").config();
 
 /* SECTION module instance */
 const app = express();
@@ -31,6 +31,7 @@ app.use(
   session({
     // this will store the cookies in the mongodb database
     store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/ticketdiary' }),
+    //store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
     // secret key will sign the cookie for validation
     //secret: process.env.SECRET,
     secret: "super safe",
@@ -58,9 +59,9 @@ app.use(require("./utils/navlinks"));
 app.use(express.static("public"));
 
 // // NOTE allow body data for all routes
- app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
- app.use(methodOverride("_method"));
+app.use(methodOverride("_method"));
 
 // // auth required 
 // if user is authenticated 
@@ -81,7 +82,7 @@ app.use(express.static("public"));
 /* !SECTION */
 
 // /* SECTION Routes */
- app.use("/", authCtrl);
+app.use("/", authCtrl);
 app.use("/gallery", postCtrl);
 app.use("/comments", commentCtrl);
 app.use("/users", usersCtrl);
@@ -89,19 +90,19 @@ app.use("/likes", likesCtrl);
 
 
 
-app.get("/", (req, res, next)=>{
+app.get("/", (req, res, next) => {
   res.render("landingPage/home");
 })
 
 // 404
 app.get("/*", (req, res) => {
-    const context = {
-        error: req.error,
-    };
+  const context = {
+    error: req.error,
+  };
 
-    res.render("404", context);
+  res.render("404", context);
 });
 
 app.listen(PORT, () =>
-    console.log(`Listening for client requests on port ${PORT}`)
+  console.log(`Listening for client requests on port ${PORT}`)
 );
