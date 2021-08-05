@@ -53,7 +53,7 @@ bioArr = ["I spend most of my time watching movies, so much that I sometimes sta
 "I can't believe there is a website like this that caters to movie lovers like myself, this is awesome!"]
 avatarArr = ["/resources/avatar.png","/resources/dragon.png","/resources/panda.png"]
 const seedUsers = async () => {
-    await User.deleteMany();
+    //await User.deleteMany();
     await User.insertMany([
         {
             username: "Anonymous",
@@ -96,7 +96,7 @@ numSeedTags = 3;
 const commentsPerPost = 3;
 const seedPosts = async () => {
     try {
-        await Post.deleteMany();
+        //await Post.deleteMany();
         for (let i = 0; i < posterArr.length; i++) {
             let tagList = [];
             for (let j = 0; j < numSeedTags; j++) {
@@ -137,7 +137,7 @@ const seedPosts = async () => {
 commentArr = ["It's lovely to hear your thoughts on this movie!", "Hey what movie are you going to watch next?", "Hey let's catch a movie sometime!", "Nice review, great work", "Amazing job sharing this with us!", "I'm so excited to hear your thoughts!", "Can't wait to see what else happens in the series", "Nice to hear your thoughts!", "Wow, great info!", "Yo let's catch a film sometime!", "Simpsons did it first", "Excellent thoughts!", "This was my favorite film as a child", "Hey cousin, let's go bowling!", "Wow I remember watching this when I was young."];
 const seedComments = async () => {
     try {
-        await Comment.deleteMany();
+        //await Comment.deleteMany();
         let idAllPosts = await Post.find({}, { _id: 1 });
         let postIdArr = await idAllPosts.map(a => a._id);
         for (let i = 0; i < commentsPerPost; i++) {
@@ -160,7 +160,7 @@ const seedComments = async () => {
 
 const seedLikes = async () => {
     try {
-        await Like.deleteMany();
+        //await Like.deleteMany();
         let idAllPosts = await Post.find({}, { _id: 1 });
         let postIdArr = await idAllPosts.map(a => a._id);
         for (let i = 0; i < posterArr.length; i++) {
