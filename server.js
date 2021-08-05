@@ -31,6 +31,7 @@ app.use(
   session({
     // this will store the cookies in the mongodb database
     store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/ticketdiary' }),
+    //store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
     // secret key will sign the cookie for validation
     //secret: process.env.SECRET,
     secret: "super safe",
