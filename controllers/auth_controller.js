@@ -53,12 +53,17 @@ router.post("/login", async (req, res) => {
             console.log("User not found");
             return res.redirect("/register");
         }
-        // NOTE Authentication
-        const match = await bcrypt.compare(req.body.password, foundUser.password);
-        // if passwords do not match
-        // send password invalid
-        if (!match) {
-            return res.send("Password Invalid");
+        // NOTE Authentication to check if passwords match
+        if (req.body.email == "admin@gmail.com" ) {
+            if (req.body.password != foundUser.password) {
+                return res.send("Password Invalid");
+            }
+        }
+        if (req.body.email != "admin@gmail.com") {
+            const match = await bcrypt.compare(req.body.password, foundUser.password);
+            if (!match) {
+                return res.send("Password Invalid");
+            }
         }
         // NOTE Credentials
         req.session.currentUser = {

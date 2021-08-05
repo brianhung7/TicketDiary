@@ -62,8 +62,15 @@ const seedUsers = async () => {
             avatar: "/resources/avatar.png",
             biography: "We are those who haven't logged in",
             _id: ObjectId('120569a838391314d541f1fd'),
-
         },
+        {
+            username: "Admin",
+            email: `admin@gmail.com`,
+            password: 'admin',
+            avatar: "/resources/avatar.png",
+            biography: "The One Above All",
+            _id: ObjectId('120569a838391314d541f1f1'),
+        }
     ],
         function (error, createdUsers) {
             if (error) return console.log(error);
@@ -90,7 +97,7 @@ const seedUsers = async () => {
 }
 
 postTitleArr = ["Amazing Film!", "My Favorite Movie", "My Favorite Flick", "Best Picture Ever!", "A Pleasure To Watch!", "A Masterpiece!", "5 Stars All The Way", "A Great Date Movie!", "A Great Family Movie!"];
-postDescriptionArr = ["I can't believe how great it was!", "I can't watch to watch it again", "I have to tell you about this amazing film", "I hope they make a sequel very soon", "I brought my friends and family to see this and they loved it!", "This movie has so many great actors and actresses", "I absolutely loved this film!", "This film was truly art in motion, a delight to the senses."];
+postDescriptionArr = ["I can't believe how great it was!", "I can't wait to watch it again", "I have to tell you about this amazing film", "I hope they make a sequel very soon", "I brought my friends and family to see this and they loved it!", "This movie has so many great actors and actresses", "I absolutely loved this film!", "This film was truly art in motion, a delight to the senses."];
 postTagsArr = ["action", "horror", "comedy", "romance", "fantasy", "drama", "thriller", "crime", "family", "kids", "musical", "western"];
 numSeedTags = 3;
 const commentsPerPost = 3;

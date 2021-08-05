@@ -29,7 +29,7 @@
                                 <input class="button" type="submit" value="Like" />
                             </form>
                             <% } %>
-                                <% if ( typeof user !=='undefined' && post.user._id==user.id) { %>
+                                <% if ( typeof user !=='undefined' && (post.user._id==user.id || user.id == '120569a838391314d541f1f1')) { %>
                                     <div class="buttons">
                                         <a href="/gallery/<%= post.id %>/edit">
                                             <input class="button" type="submit" value="Edit Post" />
@@ -71,7 +71,7 @@
                                     <a href="/users/<%= comment.user._id %> "><%= comment.user.username %></a>:
                                 </span>
                                 <%= comment.content %>
-                                    <% if ( typeof user !=='undefined' && comment.user._id==user.id) { %>
+                                    <% if ( typeof user !=='undefined' && (comment.user._id==user.id || user.id == '120569a838391314d541f1f1')) { %>
                                         <form action="../comments/<%=comment.id%>?_method=DELETE" method="POST">
                                             <div>
                                                 <button class="button ">Delete Comment</button>
