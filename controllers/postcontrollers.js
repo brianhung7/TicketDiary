@@ -136,7 +136,7 @@ router.delete("/:id", async (req, res, next) => {
     try {
         await Post.findByIdAndDelete(req.params.id);
         await Comment.deleteMany({ post: req.params.id });
-        //console.log("Deleted item");
+        await Like.deleteMany({post:req.params.id});
         return res.redirect("/gallery");
     } catch (error) {
         console.log(error);
