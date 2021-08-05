@@ -62,8 +62,15 @@ const seedUsers = async () => {
             avatar: "/resources/avatar.png",
             biography: "We are those who haven't logged in",
             _id: ObjectId('120569a838391314d541f1fd'),
-
         },
+        {
+            username: "Admin",
+            email: `admin@gmail.com`,
+            password: 'admin',
+            avatar: "/resources/avatar.png",
+            biography: "The One Above All",
+            _id: ObjectId('120569a838391314d541f1f1'),
+        }
     ],
         function (error, createdUsers) {
             if (error) return console.log(error);
