@@ -72,3 +72,7 @@ User Profile
 <h2>======Future Upgrades======</h2> </br>
 <li>Enable users to create their own custom "collections" where they save and sort posts into folders that they name themselves </li>
 <li>Make search function also search for usernames</li>
+
+<h2>======Authors======</h2> </br>
+<li><a href='https://github.com/pandaOnCode'>Arnav Singh</a></li>
+<li><a href='https://github.com/brianhung7'>Brian Pham</a></li>
