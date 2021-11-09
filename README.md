@@ -2,7 +2,7 @@
 A website where users can share films they recently watched and share their thoughts, opinions, and feelings through posts. The website invites people to experience what everyone is watching. It’s a community of film enthusiasts that celebrate film as an artform. 
 
 
-The second project of the software engineering immersive course at General Assembly. The assignment was to work in a group of two and utilize pair programming to reverse engineer a website of our choosing to create a full-stack MEN (MongoDB, Express.js, Node.js) application in one week.
+The second project of the software engineering program at General Assembly. The assignment was to work in a group of two and utilize pair programming to reverse engineer a website of our choosing to create a full-stack MEN (MongoDB, Express.js, Node.js) application in one week.
 
 We decided upon reverse engineering Instagram. We reverse engineered their database models and relationships of Users, Posts, Comments, and Likes/Favorites. Additionally we added some improvements to our application that these websites do not have. For example, on viewing the gallery, if the user hovers over a particular post, some brief information will be given about the post including, number of comments, likes, and the post description. This enables quicker accessibility and consumption of media. Furthermore we changed the "stacked" view that Instagram has to a "gallery" view in order to view more content at once.
 
